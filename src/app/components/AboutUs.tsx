@@ -148,7 +148,7 @@ const AboutUs: React.FC = () => {
         >
           <div className="bg-gray-200 h-96 rounded-lg relative overflow-hidden shadow-lg">
             <Image
-              src="/assets/images/bitcoin2.png"
+              src="/assets/images/bitcoin3.png"
               alt="about us"
               fill
               className="object-cover rounded-lg"
