@@ -85,21 +85,21 @@ const Testimonials: React.FC = () => {
               Stories from <br />Our Graduates
             </h2>
             <p className="text-gray-600 max-w-md">
-              Over 300 learners have transformed their careers through School of Satoshi's innovative blockchain education programs.
+              Many learners have transformed their careers through School of Satoshi's innovative blockchain education programs.
             </p>
             <div className="flex space-x-4">
-              <button
+              <Button
                 onClick={prevTestimonial} 
                 className="border border-gray-300 hover:bg-gray-100 transition-colors rounded-full w-12 h-12 flex items-center justify-center group"
               >
                 <ChevronLeft className="text-gray-600 group-hover:text-black" />
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={nextTestimonial} 
                 className="bg-black text-white hover:bg-gray-800 transition-colors rounded-full w-12 h-12 flex items-center justify-center group"
               >
                 <ChevronRight className="text-white group-hover:text-gray-300" />
-              </button>
+              </Button>
             </div>
           </div>
 
