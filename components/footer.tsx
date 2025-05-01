@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Bitcoin, Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Bitcoin, Facebook, Github, Instagram, Linkedin, Twitter, X } from "lucide-react"
+// import { FaXTwitter } from "react-icons/fa6";
 import { FC } from 'react'
 import Image from 'next/image';
 
@@ -11,10 +12,10 @@ const Footer: FC = () => {
           <div className="flex flex-col gap-2">
             <Link href="/" className="flex items-center gap-2">
               {/* <Bitcoin className="h-6 w-6 text-orange-500" /> */}
-              <Image src = "/assets/images/logo.png" alt= "logo" height={200} width={200}/>
+              <Image src = "/assets/images/logo.jpg" alt= "logo" height={200} width={200}/>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-              Empowering the next generation of Bitcoin innovators through world-class education.
+              To build a financially sovereign ecosystem in Uganda through practical, community-based Bitcoin education rooted in self-custody
             </p>
             {/* <div className="flex gap-4 mt-4">
               <Link href="#" className="text-gray-500 hover:text-orange-500">
@@ -105,7 +106,8 @@ const Footer: FC = () => {
             <p className=" py-5 font-bold text-xl ">Follow Us</p>
             <div className="flex gap-4 mt-4">
               <Link href="https://x.com/schoolOfSatoshi" className="text-gray-500 hover:text-orange-500">
-                <Twitter className="h-5 w-5" />
+                {/* <FaXTwitter className="h-5 w-5" /> */}
+                <X className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link href="#" className="text-gray-500 hover:text-orange-500">

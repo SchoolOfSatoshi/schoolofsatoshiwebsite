@@ -36,7 +36,7 @@ export default function Home() {
           >
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-              <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-orange-500 ">Who we are</h1>
+              <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-orange-500 ">What drives Us</h1>
 
               <Miniaboutus/>
               </div>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
     
           <motion.div
-            className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-2"
+            className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-3 lg:grid-cols-3"
             initial={{ opacity: 0 }}
             animate={featuresInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -127,31 +127,31 @@ export default function Home() {
                 <CardHeader className="flex flex-row items-center gap-4">
                   <GraduationCap className="h-8 w-8 text-orange-500" />
                   <div className="grid gap-1">
-                    <CardTitle>Expert Instructors</CardTitle>
+                    <CardTitle>Community Build</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Learn from industry professionals with years of experience in Bitcoin and blockchain.
+                    Learn from industry professionals with years of experience in Bitcoin EcoSystem.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
-            {/* <motion.div whileHover={{ scale: 1.05 }}>
+            <motion.div whileHover={{ scale: 1.05 }}>
               <Card>
                 <CardHeader className="flex flex-row items-center gap-4">
                   <BookOpen className="h-8 w-8 text-orange-500" />
                   <div className="grid gap-1">
-                    <CardTitle>Hands-on Learning</CardTitle>
+                    <CardTitle>Sensitization and Meetups</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Practical projects and real-world applications to reinforce your knowledge.
+                    Networking, Practical projects and real-world applications to reinforce your knowledge.
                   </p>
                 </CardContent>
               </Card>
-            </motion.div> */}
+            </motion.div>
           </motion.div>
         </div>
       </section>

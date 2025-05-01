@@ -14,7 +14,7 @@ const TeamLead = () => {
         bio: "Lawyer / Bitcoin educator", 
         image: "/assets/images/Angieee.jpeg?height=300&width=300",
         twitter: "https://x.com/Angella_Jude",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
         github: "#",
       },
       {
@@ -26,30 +26,6 @@ const TeamLead = () => {
         linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
         github: "https://github.com/Angella-Mulikatete",
       },
-      // {
-      //   name: "Michael Rodriguez",
-      //   role: "Technical Instructor",
-      //   bio: "Specializes in Bitcoin protocol development and cryptography. Open-source contributor.",
-      //   image: "/placeholder.svg?height=300&width=300",
-      // },
-      // {
-      //   name: "Emily Nakamoto",
-      //   role: "Community Manager",
-      //   bio: "Bitcoin advocate focused on building inclusive communities and educational resources.",
-      //   image: "/placeholder.svg?height=300&width=300",
-      // },
-      // {
-      //   name: "David Kim",
-      //   role: "Research Lead",
-      //   bio: "Focuses on Bitcoin economics and the intersection of technology and monetary policy.",
-      //   image: "/placeholder.svg?height=300&width=300",
-      // },
-      // {
-      //   name: "Lisa Patel",
-      //   role: "Operations Director",
-      //   bio: "Manages the day-to-day operations and ensures smooth running of all programs.",
-      //   image: "/placeholder.svg?height=300&width=300",
-      // },
     ].map((member, index) => (
       <Card key={index}>
         <CardHeader>

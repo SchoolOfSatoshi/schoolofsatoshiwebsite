@@ -9,6 +9,7 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./theme-togle";
 
 // const SheetContent = React.forwardRef<
 //   React.ElementRef<typeof SheetPrimitive.Content>,
@@ -31,21 +32,21 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-24 items-center justify-between">
+      <div className="container flex  items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/assets/images/logo.png" alt="logo" height={120} width={140} />
+          <Image src="/assets/images/logo.jpg" alt="logo" height={10} width={140} />
         </Link>
-        <nav className="hidden md:flex gap-6">
-          <Link href="/" className="text-sm font-medium transition-colors hover:text-orange-500">
+        <nav className="hidden md:flex gap-6 p-10">
+          <Link href="/" className="text-base font-medium transition-colors hover:text-orange-500">
             Home
           </Link>
-          <Link href="/about" className="text-sm font-medium transition-colors hover:text-orange-500">
+          <Link href="/about" className="text-base font-medium transition-colors hover:text-orange-500">
             About Us
           </Link>
-          <Link href="/cohorts" className="text-sm font-medium transition-colors hover:text-orange-500">
+          <Link href="/cohorts" className="text-base font-medium transition-colors hover:text-orange-500">
             Past Cohorts
           </Link>
-          <Link href="/team" className="text-sm font-medium transition-colors hover:text-orange-500">
+          <Link href="/team" className="text-base font-medium transition-colors hover:text-orange-500">
             Team
           </Link>
         </nav>
@@ -56,6 +57,8 @@ export default function Header() {
           <Link href="/donate">
             <Button className="bg-orange-500 hover:bg-orange-600">Donate</Button>
           </Link>
+          <ThemeToggle />
+
         </div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
@@ -68,7 +71,7 @@ export default function Header() {
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
-                  <Bitcoin className="h-6 w-6 text-orange-500" />
+                  <Image src="/assets/images/logo.jpg" alt="logo" height={10} width={140} />
                   <span className="font-bold">School of Satoshi</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>

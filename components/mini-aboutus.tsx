@@ -13,7 +13,7 @@ const Miniaboutus = () => {
       <div>
         <h3 className="text-lg font-semibold">Mission</h3>
         <p className="text-sm text-gray-500">
-          To empower the next generation of Bitcoin innovators through world-class education.
+          To equip Ugandans with Practical Bitcoin education that fosters financial sovereignity, self custody and inferred participation in the digital economy 
         </p>
       </div>
     </div>
@@ -28,7 +28,7 @@ const Miniaboutus = () => {
       </div>
     </div>
     {/* Goal */}
-    <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+    {/* <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <Goal className="h-8 w-8 text-orange-500 flex-shrink-0" />
       <div>
         <h3 className="text-lg font-semibold">Goal</h3>
@@ -36,7 +36,7 @@ const Miniaboutus = () => {
           To create a global community of Bitcoin experts and developers.
         </p>
       </div>
-    </div>
+    </div> */}
   </div>
   )
 }

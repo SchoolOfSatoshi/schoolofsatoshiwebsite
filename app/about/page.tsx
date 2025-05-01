@@ -81,14 +81,14 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Story</h2>
               <p className="text-gray-500 md:text-xl dark:text-gray-400">
-                School of Satoshi was founded in 2024 by a group of Bitcoin enthusiasts and educators who recognized the
+                School of Satoshi was founded in June 2024 by a group of Bitcoin enthusiasts Angella Wafwoyo and Angella Mulikatete who recognized the
                 need for comprehensive, accessible Bitcoin education in Uganda.
               </p>
-              <p className="text-gray-500 md:text-xl dark:text-gray-400">
+              {/* <p className="text-gray-500 md:text-xl dark:text-gray-400">
                 What started as a small workshop series has grown into a full-fledged educational institution dedicated
                 to Bitcoin excellence. Our programs have evolved to meet the growing demand for Bitcoin knowledge across
                 all skill levels.
-              </p>
+              </p> */}
             </div>
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Vision</h2>
@@ -97,17 +97,17 @@ export default function AboutPage() {
                 prior knowledge. We believe that by empowering individuals with Bitcoin knowledge based on there native Languages, we can contribute to
                 a more inclusive and innovative financial future.
               </p>
-              <p className="text-gray-500 md:text-xl dark:text-gray-400">
-                Our goal is to become the leading Bitcoin education provider globally, known for our rigorous
+              {/* <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                We aim to become the leading Bitcoin education provider in Uganda, known for our rigorous
                 curriculum, expert instructors, and successful alumni network.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="w-full py-8 md:py-12 lg:py-12 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="w-full py-8 md:py-12 lg:py-12 bg-gray-50 ">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -160,45 +160,19 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
-            {/* <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Zap className="h-8 w-8 text-orange-500" />
-                <div className="grid gap-1">
-                  <CardTitle>Innovation</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  We encourage creative thinking and innovative approaches to Bitcoin development and adoption.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <GraduationCap className="h-8 w-8 text-orange-500" />
-                <div className="grid gap-1">
-                  <CardTitle>Lifelong Learning</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  We believe in continuous education and staying updated with the latest developments in Bitcoin
-                  technology.
-                </p>
-              </CardContent>
-            </Card> */}
+      
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team Members */}
       <section className="w-full py-12 md:py-12 lg:py-12">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Founders</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Meet the passionate educators and Bitcoin experts behind School of Satoshi.
+                Meet the passionate founders behind School of Satoshi.
               </p>
             </div>
           </div>

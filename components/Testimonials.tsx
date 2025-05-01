@@ -16,7 +16,7 @@ const testimonialsData = [
     avatar: '/assets/images/Angie6.jpeg'
   },
   {
-    quote: '"The blockchain curriculum transformed my career trajectory. Incredible learning experience!"',
+    quote: '"The curriculum transformed my career trajectory. Incredible learning experience!"',
     name: 'Angellina',
     cohort: 'Cohort 1 Graduate, 2023',
     avatar: '/assets/images/Angie6.jpeg'
@@ -78,15 +78,15 @@ const Testimonials: React.FC = () => {
             <div className="flex items-center space-x-4">
               <div className="h-0.5 w-12 bg-gray-300"></div>
               <span className="text-gray-600 text-sm uppercase tracking-wider">
-                Community Impact
+                Testimonials
               </span>
             </div>
             <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-              Stories from <br />Our Graduates
+              Stories from <br />Our Students
             </h2>
-            <p className="text-gray-600 max-w-md">
+            {/* <p className="text-gray-600 max-w-md">
               Many learners have transformed their careers through School of Satoshi's innovative blockchain education programs.
-            </p>
+            </p> */}
             <div className="flex space-x-4">
               <Button
                 onClick={prevTestimonial} 

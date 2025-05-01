@@ -12,17 +12,17 @@ const cohorts = [
     year: 2024, 
     name: 'Cohort 1', 
     image: '/assets/images/cohort1.jpeg',
-    description: 'Our inaugural cohort that pioneered blockchain education.',
-    totalStudents: 30,
-    successRate: '85%'
+    description: 'Our inaugural cohort that pioneered Bitcoin education.',
+    totalStudents: 7,
+    // successRate: '85%'
   },
   { 
     year: 2024, 
     name: 'Cohort 2', 
     image: '/assets/images/c2_2.jpeg',
-    description: 'Expanded curriculum with advanced blockchain technologies.',
-    totalStudents: 45,
-    successRate: '92%'
+    description: 'Expanded curriculum with advanced Bitcoin Education',
+    totalStudents: 10,
+    // successRate: '92%'
   },
   // { 
   //   year: 2024, 
@@ -99,7 +99,7 @@ const PastCohorts: React.FC = () => {
                             </div>
                             <div>
                               <p className="text-xs uppercase text-gray-500">Success Rate</p>
-                              <p className="font-bold text-green-600">{cohort.successRate}</p>
+                              {/* <p className="font-bold text-green-600">{cohort.successRate}</p> */}
                             </div>
                           </div>
                         </div>
