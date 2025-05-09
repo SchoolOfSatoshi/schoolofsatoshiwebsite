@@ -151,6 +151,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import TeamLead from "@/components/teamLead"
+import edith from "../../public/assets/images/edith.jpeg";
+import brindon from "../../public/assets/images/brindon.jpg"
 
 export default function TeamPage() {
   return (
@@ -213,7 +215,7 @@ export default function TeamPage() {
               {
                 name: "Brindon Mwiine",
                 role: "Founder Bitcoin Kampala & Gorilla Sats",
-                image: "/placeholder.svg",
+                image: "/assets/images/brindon.jpg",
                 twitter: "https://x.com/BrindonMwiine",
                 linkedin: "https://www.linkedin.com/in/brindon-mwiine/",
               },
@@ -227,7 +229,7 @@ export default function TeamPage() {
               {
                 name: "Edith Mpumwiire",
                 role: "Growth Lead at BTC Dada & Accountant at Blink",
-                image: "/placeholder.svg",
+                image: "./assets/images/edith.jpeg",
                 twitter: "https://x.com/mpumwiredith",
                 linkedin: "https://www.linkedin.com/in/edith-mpumwire-b9aa9080/",
               },

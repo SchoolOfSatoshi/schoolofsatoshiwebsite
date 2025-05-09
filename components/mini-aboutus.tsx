@@ -13,7 +13,7 @@ const Miniaboutus = () => {
       <div>
         <h3 className="text-lg font-semibold">Mission</h3>
         <p className="text-sm text-gray-500">
-          To equip Ugandans with Practical Bitcoin education that fosters financial sovereignity, self custody and inferred participation in the digital economy 
+          To equip Ugandans with Practical Bitcoin education that fosters financial sovereignity, self custody and informed participation in the digital economy 
         </p>
       </div>
     </div>

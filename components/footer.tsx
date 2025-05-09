@@ -70,7 +70,7 @@ const Footer: FC = () => {
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-lg font-medium mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
@@ -94,7 +94,7 @@ const Footer: FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <h3 className="text-lg font-medium mb-4">Contact</h3>
             <ul className="space-y-2">

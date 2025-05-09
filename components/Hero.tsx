@@ -59,6 +59,7 @@ import { buttonVariants } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import BitcoinAnimation from "./BitcoinAnimation";
 
 const Hero = () => {
   const router = useRouter();
@@ -79,6 +80,13 @@ const Hero = () => {
         duration: 60,
       }}
     >
+       <div className="absolute top-20 right-10 opacity-20 animate-spin-slow">
+          <BitcoinAnimation size={120} />
+        </div>
+        <div className="absolute bottom-20 left-10 opacity-20">
+          <BitcoinAnimation size={120} />
+        </div>
+      {/*if I want images to appear on mobile view change:  className="w-24 h-24 rounded-full absolute top-[50%] -right-10 border-2 border-orange-500 block" */}
       <Image
         src="/assets/images/c1.jpeg"
         alt="image"

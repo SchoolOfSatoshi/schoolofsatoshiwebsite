@@ -27,36 +27,38 @@ const TeamLead = () => {
         github: "https://github.com/Angella-Mulikatete",
       },
     ].map((member, index) => (
-      <Card key={index}>
-        <CardHeader>
-          <div className="flex justify-center">
+      <Card key={index} className='px-2'>
+        <CardHeader  className="relative flex flex-col items-center p-6 rounded  cursor-pointer">
+          <div className="mb-2 ">
+            {/* relative w-[150px] h-[150px] rounded-full overflow-hidden mb-4  */}
             <Image
               src={member.image || "/placeholder.svg"}
               alt={member.name}
               width={150}
               height={150}
-              className="rounded-full object-cover"
+              className="rounded-full object-cover justify-center"
+              style={{ objectPosition: "center" }}
             />
           </div>
-          <CardTitle className="mt-4">{member.name}</CardTitle>
-          <CardDescription>{member.role}</CardDescription>
+          <CardTitle className=" text-center">{member.name}</CardTitle>
+          <CardDescription className='text-center'>{member.role}</CardDescription>
+          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">{member.bio}</p>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{member.bio}</p>
-          <div className="flex space-x-4">
-                    <Link href={member.twitter} className="text-gray-500 hover:text-orange-500">
-                      <Twitter className="h-5 w-5" />
-                      <span className="sr-only">Twitter</span>
-                    </Link>
-                    <Link href={member.linkedin} className="text-gray-500 hover:text-orange-500">
-                      <Linkedin className="h-5 w-5" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Link>
-                    <Link href={member.github} className="text-gray-500 hover:text-orange-500">
-                      <Github className="h-5 w-5" />
-                      <span className="sr-only">GitHub</span>
-                    </Link>
-                  </div>
+          <div className="flex space-x-4 justify-center">
+            <Link href={member.twitter} className="text-gray-500 hover:text-orange-500">
+              <Twitter className="h-5 w-5" />
+              <span className="sr-only">Twitter</span>
+            </Link>
+            <Link href={member.linkedin} className="text-gray-500 hover:text-orange-500">
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+            <Link href={member.github} className="text-gray-500 hover:text-orange-500">
+              <Github className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          </div>
         </CardContent>
       </Card>
     ))}

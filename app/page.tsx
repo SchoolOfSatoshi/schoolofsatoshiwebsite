@@ -12,6 +12,8 @@ import Testimonials from "@/components/Testimonials";
 import PastCohorts from "@/components/PastCohorts";
 import Hero from "@/components/Hero";
 import Features from "@/components/features";
+import YouTubeVideoSection from "@/components/videoComponent";
+//import YouTubeVideoSection from "@/components/bitcoin-kiboozi";
 
 export default function Home() {
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
@@ -84,8 +86,6 @@ export default function Home() {
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               We are committed to providing comprehensive financial education, with a strong emphasis on Bitcoin and its potential to drive economic empowerment. Our aim is to equip Ugandans with the knowledge and practical skills needed to navigate the financial landscape, break free from traditional barriers, and harness the power of Bitcoin as a tool for financial inclusion and independence.  
-
-              {/* By fostering financial literacy and digital asset awareness, we aim to create a community where individuals can confidently participate in the  global economy, unlocking new opportunities for growth and self-sufficiency. */}
               </p>
             </div>
 
@@ -156,95 +156,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Programs Preview */}
-      {/* <section className="w-full py-12 md:py-10 lg:py-10 bg-gray-50 dark:bg-gray-900">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            ref={programsRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={programsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
-          >
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Programs</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Comprehensive Bitcoin education for all skill levels.
-              </p>
-            </div>
-          </motion.div>
-          <motion.div
-            className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3"
-            initial={{ opacity: 0 }}
-            animate={programsInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Bitcoin Basics</CardTitle>
-                  <CardDescription>For Beginners</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    A 4-week introduction to Bitcoin fundamentals, perfect for newcomers.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link href="/programs#basics">
-                    <Button variant="outline">Learn More</Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Developer Bootcamp</CardTitle>
-                  <CardDescription>For Aspiring Developers</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    An 8-week intensive program focused on Bitcoin and Lightning Network development.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link href="/programs#developer">
-                    <Button variant="outline">Learn More</Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Advanced Protocol</CardTitle>
-                  <CardDescription>For Experienced Developers</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    A 12-week deep dive into advanced Bitcoin protocol development and security.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link href="/programs#advanced">
-                    <Button variant="outline">Learn More</Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          </motion.div>
-          <div className="flex justify-center mt-8">
-            <Link href="/programs">
-              <Button className="bg-orange-500 hover:bg-orange-600">View All Programs</Button>
-            </Link>
-          </div>
-        </div>
-      </section> */}
-        <Testimonials/>
-      {/* Previous Cohorts Preview */}
-      {/* <PastCohorts/> */}
+
       <PastCohorts/>
+
+      <YouTubeVideoSection/>
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">

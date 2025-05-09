@@ -49,6 +49,9 @@ export default function Header() {
           <Link href="/team" className="text-base font-medium transition-colors hover:text-orange-500">
             Team
           </Link>
+          <Link href="/contact" className="text-base font-medium transition-colors hover:text-orange-500">
+            Contact Us
+          </Link>
         </nav>
         <div className="hidden md:flex gap-4">
           <Link href="/apply">
@@ -72,7 +75,10 @@ export default function Header() {
               <div className="flex items-center justify-between border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
                   <Image src="/assets/images/logo.jpg" alt="logo" height={10} width={140} />
-                  <span className="font-bold">School of Satoshi</span>
+                  {/* <span className="font-bold">School of Satoshi</span> */}
+                  <span>
+                    School of <span className="gradient-text">Satoshi</span>
+                  </span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-5 w-5" />
@@ -85,6 +91,7 @@ export default function Header() {
                   { href: "/about", text: "About Us" },
                   { href: "/cohorts", text: "Past Cohorts" },
                   { href: "/team", text: "Team" },
+                  { href: "/contact", text: "Contact" },
                 ].map((link, index) => (
                   <motion.div
                     key={index}
@@ -138,7 +145,123 @@ export default function Header() {
 
 
 
+// import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import { Button } from "@/components/ui/button";
+// import { Menu, X } from "lucide-react";
+// import { cn } from "@/lib/utils";
 
+// const Navbar: React.FC = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (window.scrollY > 20) {
+//         setScrolled(true);
+//       } else {
+//         setScrolled(false);
+//       }
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   const navLinks = [
+//     { name: "Home", path: "/" },
+//     { name: "Courses", path: "/courses" },
+//     { name: "About", path: "/about" },
+//     { name: "Resources", path: "/resources" },
+//     { name: "Blog", path: "/blog" },
+//     { name: "Contact", path: "/contact" },
+//   ];
+
+//   return (
+//     <nav
+//       className={cn(
+//         "fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4",
+//         scrolled 
+//           ? "glass-effect shadow-md py-3" 
+//           : "bg-transparent"
+//       )}
+//     >
+//       <div className="container mx-auto px-4 flex items-center justify-between">
+//         <Link 
+//           to="/" 
+//           className="flex items-center gap-2 font-bold text-xl"
+//         >
+//           <div className="relative w-8 h-8">
+//             <svg 
+//               viewBox="0 0 24 24" 
+//               className="w-full h-full text-bitcoin-orange"
+//             >
+//               <circle cx="12" cy="12" r="11" fill="currentColor" />
+//               <path 
+//                 d="M15.75 10.5C15.75 8.75 14.38 7.38 12.63 7.38H8.25V14.63H12.63C14.38 14.63 15.75 13.25 15.75 11.5C15.75 10.5 15.75 10.5 15.75 10.5Z" 
+//                 fill="white"
+//               />
+//               <path 
+//                 d="M11.25 7.5V6H9.75V7.5H9V6H7.5V7.5H6V9H7.5V15H6V16.5H7.5V18H9V16.5H9.75V18H11.25V16.5C13.5 16.5 15 15 15 12.75C15 10.5 13.5 9 11.25 9C13.5 9 13.5 7.5 11.25 7.5ZM9 9H11.25C12 9 12 10.5 11.25 10.5H9V9ZM11.625 15H9V12H11.625C12.75 12 12.75 15 11.625 15Z" 
+//                 fill="white"
+//               />
+//             </svg>
+//           </div>
+//           <span>
+//             School of <span className="gradient-text">Satoshi</span>
+//           </span>
+//         </Link>
+
+//         <div className="hidden md:flex items-center gap-6">
+//           {navLinks.map((link) => (
+//             <Link
+//               key={link.name}
+//               to={link.path}
+//               className="text-foreground/80 hover:text-foreground font-medium transition-colors"
+//             >
+//               {link.name}
+//             </Link>
+//           ))}
+//           <Button className="bitcoin-button">
+//             Start Learning
+//           </Button>
+//         </div>
+
+//         <button
+//           className="md:hidden"
+//           onClick={() => setIsOpen(!isOpen)}
+//         >
+//           {isOpen ? <X size={24} /> : <Menu size={24} />}
+//         </button>
+
+//         {/* Mobile menu */}
+//         {isOpen && (
+//           <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg py-5 md:hidden border-t">
+//             <div className="container mx-auto px-4 flex flex-col gap-4">
+//               {navLinks.map((link) => (
+//                 <Link
+//                   key={link.name}
+//                   to={link.path}
+//                   className="text-foreground/80 hover:text-foreground font-medium transition-colors py-2"
+//                   onClick={() => setIsOpen(false)}
+//                 >
+//                   {link.name}
+//                 </Link>
+//               ))}
+//               <Button className="bitcoin-button mt-2 w-full">
+//                 Start Learning
+//               </Button>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
 
 
 

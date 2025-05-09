@@ -77,31 +77,35 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="w-full py-12 md:py-12 lg:py-12">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Story</h2>
-              <p className="text-gray-500 md:text-xl dark:text-gray-400">
-                School of Satoshi was founded in June 2024 by a group of Bitcoin enthusiasts Angella Wafwoyo and Angella Mulikatete who recognized the
-                need for comprehensive, accessible Bitcoin education in Uganda.
+          <div className="gap-6  lg:gap-12">
+          {/* <div className="space-y-2 px-4 md:px-6 justify-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Our Story
+              </h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              School of Satoshi was established in June 2024 by Bitcoin enthusiasts Angella Wafwoyo and Angella Mulikatete, under the mentorship of Bitcoin Kampala, in response to the growing need for accessible and comprehensive Bitcoin education in Uganda.
+              We envision a world where Bitcoin education is accessible to everyone, regardless of their background or prior knowledge. We believe that by empowering individuals with Bitcoin knowledge based on there native Languages, we can contribute to a more inclusive and innovative financial future.
               </p>
-              {/* <p className="text-gray-500 md:text-xl dark:text-gray-400">
-                What started as a small workshop series has grown into a full-fledged educational institution dedicated
-                to Bitcoin excellence. Our programs have evolved to meet the growing demand for Bitcoin knowledge across
-                all skill levels.
-              </p> */}
-            </div>
+            </div> */}
             <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">Our Story</h2>
+              <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                School of Satoshi was established in June 2024 by Bitcoin enthusiasts Angella Wafwoyo and Angella Mulikatete, under the mentorship of Bitcoin Kampala, in response to the growing need for accessible and comprehensive Bitcoin education in Uganda. .
+              </p>
+              <p className="text-gray-500 md:text-xl dark:text-gray-400">
+                We envision a world where Bitcoin education is accessible to everyone, regardless of their background or
+                prior knowledge. We believe that by empowering individuals with Bitcoin knowledge based on there native Languages, we can contribute to
+                a more inclusive and innovative financial future.
+              </p>
+            </div>
+            {/* <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Vision</h2>
               <p className="text-gray-500 md:text-xl dark:text-gray-400">
                 We envision a world where Bitcoin education is accessible to everyone, regardless of their background or
                 prior knowledge. We believe that by empowering individuals with Bitcoin knowledge based on there native Languages, we can contribute to
                 a more inclusive and innovative financial future.
               </p>
-              {/* <p className="text-gray-500 md:text-xl dark:text-gray-400">
-                We aim to become the leading Bitcoin education provider in Uganda, known for our rigorous
-                curriculum, expert instructors, and successful alumni network.
-              </p> */}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
