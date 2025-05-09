@@ -54,7 +54,7 @@ export default function YouTubeVideoSection({ title = "Bitcoin Kiboozi Videos", 
               Bitcoin Kiboozi highlights
             </p> */}
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed dark:text-gray-300 mt-4">
-              Explore our Random series featuring random people discussing about what they understand about Bitcoin adoption.
+              Explore our video series featuring random people discussing about what they understand about Bitcoin adoption.
             </p>
           </div>
         </div>
