@@ -11,11 +11,12 @@ interface Video {
   title: string
   description: string
 }
+//https://youtube.com/shorts/FJkUfiHV-f8?feature=share
 
 export default function YouTubeVideoSection({ title = "Bitcoin Kiboozi Videos", viewAllLink = "/videos" }) {
   const videos: Video[] = [
     {
-      id: "Bzi-e_1TDR0",
+      id: "FJkUfiHV-f8",
       title: "Bitcoin Kiboozi Feature",
       description: "A short introduction to our Bitcoin Kiboozi program and what it offers.",
     },
@@ -50,9 +51,6 @@ export default function YouTubeVideoSection({ title = "Bitcoin Kiboozi Videos", 
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2 inline-block p-1.5 px-3 bg-orange-100 rounded-full font-medium text-orange-600 mb-4 animate-pulse-slow">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Bitcoin Kiboozi highlights</h2>
-            {/* <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Bitcoin Kiboozi highlights
-            </p> */}
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed dark:text-gray-300 mt-4">
               Explore our video series featuring random people discussing about what they understand about Bitcoin adoption.
             </p>
@@ -66,15 +64,28 @@ export default function YouTubeVideoSection({ title = "Bitcoin Kiboozi Videos", 
               <div>
                 <Card className="overflow-hidden border-0 shadow-lg">
                   <CardContent className="p-0">
-                    <div className="relative pt-[56.25%]">
+                    {/* <div className="relative pt-[56.25%] w-full aspect-video">
                       <iframe
                         className="absolute inset-0 w-full h-full"
-                        src={`https://www.youtube.com/embed/Bzi-e_1TDR0`}
+                        src={`https://www.youtube.com/embed/FJkUfiHV-f8`}
                         title="Bitcoin Kiboozi Feature"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                      ></iframe>
-                    </div>
+                     ></iframe>
+
+                    </div> */}
+                            <div className="mt-5 mb-[4rem] md:mb-[100px] w-full">
+          <div>
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/FJkUfiHV-f8"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
                     {/* <div className="p-8 bg-gradient-to-r from-amber-50 to-white">
 
                       <Link
@@ -120,5 +131,3 @@ export default function YouTubeVideoSection({ title = "Bitcoin Kiboozi Videos", 
     </section>
   )
 }
-
-

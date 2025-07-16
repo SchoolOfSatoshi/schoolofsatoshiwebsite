@@ -1,148 +1,4 @@
-// import Image from "next/image"
-// import Link from "next/link"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Github, Linkedin, Twitter } from "lucide-react"
-// import TeamLead from "@/components/teamLead"
 
-// export default function TeamPage() {
-//   return (
-//     <div className="flex flex-col min-h-screen">
-//       {/* Hero Section */}
- 
-
-//       {/* Leadership Team */}
-//       <section className="w-full py-12 md:py-12 lg:py-12">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Core Team</h2>
-//               <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-//                 The visionaries guiding our mission to provide world-class Bitcoin education.
-//               </p>
-//             </div>
-//           </div>
-//           <TeamLead/>
-//         </div>
-//       </section>
-
-//       {/* Instructors */}
-//       <section className="w-full py-12 md:py-12 lg:py-12 bg-gray-50 ">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Instructors</h2>
-//               <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-//                 Our expert instructors bring real-world Bitcoin experience to the classroom.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-//             {[
-//               {
-//                 name: "Angella Wafwoyo",
-//                 role: "Founder / Lawyer & Lead Instructor",
-//                 image: "/assets/images/Angieee.jpeg?height=300&width=300",
-//                 twitter: "https://x.com/Angella_Jude",
-//                 linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
-//               },
-//               {
-//                 name: "Angella Mulikatete",
-//                 role: "Co-Founder/ Software Developer ",
-//                 image: "/assets/images/Angellina.jpeg?height=300&width=300",
-//                 twitter: "https://x.com/AMulikatete",
-//                 linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
-//                 github: "https://github.com/Angella-Mulikatete",
-//               },
-//               {
-//                 name: "Brindon Mwiine",
-//                 role: "founder Bitcoin Kampala & Gorilla Sats",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/BrindonMwiine",
-//                 linkedin: "https://www.linkedin.com/in/brindon-mwiine/",
-//               },
-//               {
-//                 name: "Afan Sabila",
-//                 role: "co founder Bitcoin Kampala & Gorilla Sats",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/afansabila",
-//                 linkedin: "https://www.linkedin.com/in/babu-afan-381084251/",
-//               },
-//               {
-//                 name: "Edith Mpumwiire",
-//                 role: "Growth Lead at BTC Dada & an accountant at Blink",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/mpumwiredith",
-//                 linkedin: "https://www.linkedin.com/in/edith-mpumwire-b9aa9080/",
-//               },
-//               {
-//                 name: "Sabina Gitau",
-//                 role: "co-founder at Tando",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/waithiraah",
-//                 linkedin: "https://www.linkedin.com/in/sabina-gitau-6497b725a/",
-//               },
-//               {
-//                 name: "Felix Mukungu",
-//                 role: "Founder at The Core",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/MukunguFelix",
-//                 linkedin: "#",
-//               },
-//               {
-//                 name: "Victor",
-//                 role: "Developer Bootcamp Lead",
-//                 image: "/placeholder.svg?height=300&width=300",
-//                 twitter: "https://x.com/ntamugabumwevic",
-//                 linkedin: "https://www.linkedin.com/in/ntamugabumwevic/",
-//               },
-//             ].map((member, index) => (
-//               <Card key={index} className="overflow-hidden">
-//                 <div className="aspect-square relative">
-//                   <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-//                 </div>
-//                 <CardHeader>
-//                   <CardTitle className="text-lg">{member.name}</CardTitle>
-//                   <CardDescription>{member.role}</CardDescription>
-//                 </CardHeader>
-//                 <CardContent>
-//                   <div className="flex space-x-4">
-//                     <Link href={member.twitter} className="text-gray-500 hover:text-orange-500">
-//                       <Twitter className="h-4 w-4" />
-//                       <span className="sr-only">Twitter</span>
-//                     </Link>
-//                     <Link href={member.linkedin} className="text-gray-500 hover:text-orange-500">
-//                       <Linkedin className="h-4 w-4" />
-//                       <span className="sr-only">LinkedIn</span>
-//                     </Link>
-//                   </div>
-//                 </CardContent>
-//               </Card>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Join Our Team CTA */}
-//       {/* <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Join Our Team</h2>
-//               <p className="max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-//                 Passionate about Bitcoin education? We're always looking for talented individuals to join our mission.
-//               </p>
-//             </div>
-//             <Link href="/careers">
-//               <Button className="bg-white text-orange-500 hover:bg-gray-100">View Open Positions</Button>
-//             </Link>
-//           </div>
-//         </div>
-//       </section> */}
-//     </div>
-//   )
-// }
 
 
 import Image from "next/image"
@@ -157,19 +13,6 @@ import brindon from "../../public/assets/images/brindon.jpg"
 export default function TeamPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Hero Section */}
-      {/* <section className="w-full py-16  text-white">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-6 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Meet Our Team</h1>
-            <div className="w-24 h-1 bg-orange-500 my-4"></div>
-            <p className="max-w-[800px] text-xl text-gray-300">
-              A community of passionate individuals using education to empower the next generation.
-            </p>
-          </div>
-        </div>
-      </section> */}
-
       {/* Leadership Team */}
       <section className="w-full py-16 md:py-20">
         <div className="container px-4 md:px-6 mx-auto">
@@ -188,7 +31,7 @@ export default function TeamPage() {
       <section className="w-full py-16 md:py-20 bg-gray-50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">Our Instructors</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">Meet Our Tutors</h2>
             <div className="w-20 h-1 bg-orange-500 my-2"></div>
             <p className="max-w-[700px] text-gray-600 md:text-xl">
               Expert educators bringing real-world Bitcoin experience to the classroom.
@@ -229,28 +72,35 @@ export default function TeamPage() {
               {
                 name: "Edith Mpumwiire",
                 role: "Growth Lead at BTC Dada & Accountant at Blink",
-                image: "./assets/images/edith.jpeg",
+                image: "./assets/images/edth.jpeg",
                 twitter: "https://x.com/mpumwiredith",
                 linkedin: "https://www.linkedin.com/in/edith-mpumwire-b9aa9080/",
               },
               {
                 name: "Sabina Gitau",
                 role: "Co-founder at Tando",
-                image: "/placeholder.svg",
+                image: "./assets/images/sabina.jpeg",
                 twitter: "https://x.com/waithiraah",
                 linkedin: "https://www.linkedin.com/in/sabina-gitau-6497b725a/",
               },
               {
-                name: "Felix Mukungu",
-                role: "Founder at The Core",
-                image: "/placeholder.svg",
+                name: "Akisibe Abdalaah",
+                role: "BTC Enthusiast",
+                image: "./assets/images/harymo.jpg",
                 twitter: "https://x.com/MukunguFelix",
+                linkedin: "#",
+              },
+                            {
+                name: "Ritah Ssemakula",
+                role: "BTC Enthusiast",
+                image: "./assets/images/rytah.png",
+                twitter: "#",
                 linkedin: "#",
               },
               {
                 name: "Victor",
-                role: "Developer Bootcamp Lead",
-                image: "/placeholder.svg",
+                role: "Alumni",
+                image: "./assets/images/vic.png",
                 twitter: "https://x.com/ntamugabumwevic",
                 linkedin: "https://www.linkedin.com/in/ntamugabumwevic/",
               },

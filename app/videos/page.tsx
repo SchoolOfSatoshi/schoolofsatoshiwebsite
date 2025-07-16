@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function VideosPage() {
   const [hoveredVideo, setHoveredVideo] = useState<string | null>(null);
   
-  // Replace these with your actual YouTube video IDs and details
+
   const videos = [
     {
       id: "x9apVcZc_ds",
@@ -70,7 +70,7 @@ export default function VideosPage() {
       <section className="w-full py-2 md:py-2 lg:py-2 bg-white dark:bg-gray-900">
         <div className="container px-4 md:px-6">
           <Tabs defaultValue="all" className="w-full">
-            {/* <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-12">
               <TabsList className="bg-amber-50 p-1 rounded-full dark:bg-gray-800">
                 <TabsTrigger 
                   value="all" 
@@ -79,7 +79,7 @@ export default function VideosPage() {
                   All Episodes
                 </TabsTrigger>
               </TabsList>
-            </div> */}
+            </div>
 
             <TabsContent value="all" className="space-y-12 transition-all duration-500 ease-in-out">
               <div className="grid md:grid-cols-2 gap-8">
@@ -177,216 +177,3 @@ export default function VideosPage() {
   );
 }
 
-
-
-
-
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-// import { Play } from "lucide-react"
-// import Image from "next/image"
-// import Link from "next/link"
-
-// export default function VideosPage() {
-//   // Replace these with your actual YouTube video IDs and details
-//   const videos = [
-//     // {
-//     //   id: "Bzi-e_1TDR0",
-//     //   title: "Bitcoin Kiboozi Feature",
-//     //   description: "A short introduction to our Bitcoin Kiboozi program and what it offers.",
-//     //   date: "May 15, 2023",
-//     //   views: "1.2K",
-//     // },
-//     {
-//       id: "x9apVcZc_ds",
-//       title: "Bitcoin Kiboozi Ep.1 – Fred Burondwa on Blockchain, Banks & Africa's Digital Future",
-//       link: "https://youtu.be/x9apVcZc_ds",
-//       description:
-//         "In the debut episode of Bitcoin Kiboozi, we speak with Fred Burondwa—a creative thinker and observer of Uganda's evolving financial space. Fred shares his opinion that Uganda's banking sector is slowly improving, but sees an even bigger opportunity in blockchain technology.",
-//     },
-//     {
-//       id: "CzMODdME5qQ",
-//       title: "Bitcoin Kiboozi Ep. 2 – Kezia Namara on Bitcoin, Trade & Africa's Payment Future",
-//       link:"https://youtu.be/CzMODdME5q",
-//       description:
-//         "In this second episode of Bitcoin Kiboozi, Kezia Namara shares her insights as a trader and business thinker navigating the realities of cross-border trade in Africa. Kezia sees Bitcoin as a strong solution for one of the continent's biggest trade bottlenecks: expensive and slow transactions.",
-//     },
-//   ]
-//   //ep1 https://youtu.be/x9apVcZc_ds
-//   //ep2 https://youtu.be/CzMODdME5qQ
-
-//   return (
-//     <div className="flex flex-col min-h-screen">
-//       {/* Hero Section */}
-//       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-amber-50 to-white">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-//                 Bitcoin Kiboozi Videos
-//               </h1>
-//               <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-//                Random videos on random People about what they know about Bitcoin
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Videos Section */}
-//       <section className="w-full py-12 md:py-24 lg:py-32">
-//         <div className="container px-4 md:px-6">
-//           <Tabs defaultValue="all" className="w-full">
-//             {/* <div className="flex justify-center mb-8">
-//               <TabsList>
-//                 <TabsTrigger value="all">All Videos</TabsTrigger>
-//                 <TabsTrigger value="basics">Basics</TabsTrigger>
-//                 <TabsTrigger value="advanced">Advanced</TabsTrigger>
-//                 <TabsTrigger value="tutorials">Tutorials</TabsTrigger>
-//               </TabsList>
-//             </div> */}
-
-//             <TabsContent value="all" className="space-y-8">
-//               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                 {videos.map((video, index) => (
-//                   <Card key={index} className="overflow-hidden">
-//                     <CardContent className="p-0">
-//                       <div className="relative aspect-video">
-//                         <Image
-//                           src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-//                           alt={video.title}
-//                           className="w-full h-full object-cover"
-//                           width= {100}
-//                           height={100}
-//                         />
-//                         <Link
-//                           href={`${video.link}`}
-//                           className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors"
-//                         >
-//                           <Play className="h-12 w-12 text-white" />
-//                         </Link>
-//                       </div>
-                  
-//                       <div className="p-4">
-//                         <h3 className="font-bold mb-1">{video.title}</h3>
-//                         <p className="text-sm text-gray-500 mb-2">{video.description}</p>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 ))}
-//               </div>
-//             </TabsContent>
-
-//             {/* <TabsContent value="basics" className="space-y-8">
-//               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                 {videos.slice(0, 4).map((video, index) => (
-//                   <Card key={index} className="overflow-hidden">
-//                     <CardContent className="p-0">
-//                       <div className="relative aspect-video">
-//                         <img
-//                           src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-//                           alt={video.title}
-//                           className="w-full h-full object-cover"
-//                         />
-//                         <Link
-//                           href={`/videos/${video.id}`}
-//                           className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors"
-//                         >
-//                           <Play className="h-12 w-12 text-white" />
-//                         </Link>
-//                       </div>
-//                       <div className="p-4">
-//                         <h3 className="font-bold mb-1">{video.title}</h3>
-//                         <p className="text-sm text-gray-500 mb-2">{video.description}</p>
-//                         <div className="flex justify-between text-xs text-gray-400">
-//                           <span>{video.date}</span>
-//                           <span>{video.views} views</span>
-//                         </div>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 ))}
-//               </div>
-//             </TabsContent>
-
-//             <TabsContent value="advanced" className="space-y-8">
-//               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                 {videos.slice(4, 7).map((video, index) => (
-//                   <Card key={index} className="overflow-hidden">
-//                     <CardContent className="p-0">
-//                       <div className="relative aspect-video">
-//                         <img
-//                           src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-//                           alt={video.title}
-//                           className="w-full h-full object-cover"
-//                         />
-//                         <Link
-//                           href={`/videos/${video.id}`}
-//                           className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors"
-//                         >
-//                           <Play className="h-12 w-12 text-white" />
-//                         </Link>
-//                       </div>
-//                       <div className="p-4">
-//                         <h3 className="font-bold mb-1">{video.title}</h3>
-//                         <p className="text-sm text-gray-500 mb-2">{video.description}</p>
-//                         <div className="flex justify-between text-xs text-gray-400">
-//                           <span>{video.date}</span>
-//                           <span>{video.views} views</span>
-//                         </div>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 ))}
-//               </div>
-//             </TabsContent>
-
-//             <TabsContent value="tutorials" className="space-y-8">
-//               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                 {videos.slice(7, 9).map((video, index) => (
-//                   <Card key={index} className="overflow-hidden">
-//                     <CardContent className="p-0">
-//                       <div className="relative aspect-video">
-//                         <img
-//                           src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-//                           alt={video.title}
-//                           className="w-full h-full object-cover"
-//                         />
-//                         <Link
-//                           href={`/videos/${video.id}`}
-//                           className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors"
-//                         >
-//                           <Play className="h-12 w-12 text-white" />
-//                         </Link>
-//                       </div>
-//                       <div className="p-4">
-//                         <h3 className="font-bold mb-1">{video.title}</h3>
-//                         <p className="text-sm text-gray-500 mb-2">{video.description}</p>
-//                         <div className="flex justify-between text-xs text-gray-400">
-//                           <span>{video.date}</span>
-//                           <span>{video.views} views</span>
-//                         </div>
-//                       </div>
-//                     </CardContent>
-//                   </Card>
-//                 ))}
-//               </div>
-//             </TabsContent> */}
-//           </Tabs>
-
-//           <div className="flex justify-center mt-12">
-//             <a
-//               href="https://www.youtube.com/channel/YOUR_CHANNEL_ID"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="inline-flex items-center"
-//             >
-//               <Button className="bg-red-600 hover:bg-red-700">Visit Our YouTube Channel</Button>
-//             </a>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }

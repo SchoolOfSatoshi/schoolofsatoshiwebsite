@@ -17,6 +17,9 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
+  compiler: {
+    styledComponents: true,
+  },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

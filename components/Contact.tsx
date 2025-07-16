@@ -48,8 +48,7 @@ const Contact = () => {
 
   return (
     <>
-     
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-amber-50 to-white relative overflow-hidden">
         <div className="container px-4 md:px-6 mx-auto relative z-10">

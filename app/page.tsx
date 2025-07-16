@@ -27,7 +27,7 @@ export default function Home() {
       {/* Hero Section */}
 
       <Hero/>
-      <section className="w-full py-12 md:py-25 lg:py-25 bg-gradient-to-b from-amber-50 to-white">
+      <section className="w-full py-8 md:py-12 lg:py-16 bg-gradient-to-b from-amber-50 to-white">
         <div className="container px-4 md:px-6">
           <motion.div
             ref={heroRef}
@@ -36,19 +36,15 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]"
           >
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
+            <div className="flex flex-col justify-center space-y-2">
+              <div className="space-y-1">
               <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-orange-500 ">What drives Us</h1>
-
               <Miniaboutus/>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row py-5">
+              <div className="flex flex-col gap-2 min-[400px]:flex-row py-3">
                 <Link href="/about">
                   <Button className="bg-orange-500 hover:bg-orange-600">Learn More</Button>
                 </Link>
-                {/* <Link href="/about">
-                  <Button variant="outline">Learn More</Button>
-                </Link> */}
               </div>
             </div>
             <div className="flex items-center justify-center">
@@ -71,7 +67,7 @@ export default function Home() {
 
       {/* Features Section */}
       {/* <Features/> */}
-      <section className="w-full py-12 md:py-10 lg:py-20">
+      <section className="w-full py-8 md:py-10 lg:py-16">
         <div className="container px-4 md:px-6">
           <motion.div
             ref={featuresRef}
@@ -93,29 +89,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-10 lg:py-20">
+      <section className="w-full py-8 md:py-10 lg:py-12">
         <div className="container px-4 md:px-6">
-          <div className="px-4 md:px-6 space-y-2 text-center ">      
+          <div className="px-4 md:px-6 text-center ">      
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Our Services
             </h2>
           </div>
     
           <motion.div
-            className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-3 lg:grid-cols-3"
+            className="mx-auto grid max-w-5xl items-stretch gap-4 py-8 md:grid-cols-3 lg:grid-cols-3"
             initial={{ opacity: 0 }}
             animate={featuresInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
+              <Card className="flex flex-col flex-grow">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <Bitcoin className="h-8 w-8 text-orange-500" />
                   <div className="grid gap-1">
                     <CardTitle>Bitcoin Fundamentals</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Learn the core concepts of Bitcoin, blockchain technology, and cryptocurrency.
                   </p>
@@ -123,29 +119,30 @@ export default function Home() {
               </Card>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
+              <Card className="flex flex-col flex-grow">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <GraduationCap className="h-8 w-8 text-orange-500" />
                   <div className="grid gap-1">
                     <CardTitle>Community Build</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
+               <CardContent className="flex-grow">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Learn from industry professionals with years of experience in Bitcoin EcoSystem.
                   </p>
                 </CardContent>
               </Card>
             </motion.div>
+            
             <motion.div whileHover={{ scale: 1.05 }}>
-              <Card>
+              <Card className="flex flex-col flex-grow">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <BookOpen className="h-8 w-8 text-orange-500" />
                   <div className="grid gap-1">
                     <CardTitle>Sensitization and Meetups</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Networking, Practical projects and real-world applications to reinforce your knowledge.
                   </p>

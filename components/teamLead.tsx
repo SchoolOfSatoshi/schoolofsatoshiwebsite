@@ -19,7 +19,7 @@ const TeamLead = () => {
       },
       {
         name: "Angella Mulikatete",
-        role: "Co-Founder/ Programs Lead ",
+        role: "Co-Founder/Programs Lead ",
         bio: "Software Engineer/ Developer ",
         image: "/assets/images/Angellina.jpeg?height=300&width=300",
         twitter: "https://x.com/AMulikatete",
@@ -29,17 +29,17 @@ const TeamLead = () => {
     ].map((member, index) => (
       <Card key={index} className='px-2'>
         <CardHeader  className="relative flex flex-col items-center p-6 rounded  cursor-pointer">
-          <div className="mb-2 ">
-            {/* relative w-[150px] h-[150px] rounded-full overflow-hidden mb-4  */}
+          <div className="relative w-[150px] h-[150px] rounded-full overflow-hidden mb-2 flex items-center justify-center">
             <Image
               src={member.image || "/placeholder.svg"}
               alt={member.name}
               width={150}
               height={150}
-              className="rounded-full object-cover justify-center"
+              className="object-cover w-full h-full"
               style={{ objectPosition: "center" }}
             />
           </div>
+
           <CardTitle className=" text-center">{member.name}</CardTitle>
           <CardDescription className='text-center'>{member.role}</CardDescription>
           <p className="text-sm text-gray-500 dark:text-gray-400 text-center">{member.bio}</p>
@@ -67,3 +67,45 @@ const TeamLead = () => {
 }
 
 export default TeamLead
+
+
+
+// "use client"
+
+// import Image from "next/image"
+
+// const TeamLead = () => {
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+//       {/* Angella Wafwoyo */}
+//       <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+//         <Image
+//           src="/assets/images/Angieee.jpeg"
+//           alt="Angella Wafwoyo"
+//           width={150}
+//           height={150}
+//           className="rounded-full mb-4"
+//         />
+//         <h3 className="font-heading text-xl font-semibold">Angella Wafwoyo</h3>
+//         <p className="font-sans text-gray-600 text-center">Co-founder, School of Satoshi</p>
+//         <p className="font-sans text-gray-500 text-sm mt-2 text-center">Bitcoin Educator and Advocate</p>
+//       </div>
+
+//       {/* Angella Mulikatete */}
+//       <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+//         <Image
+//           src="/assets/images/Angellina.jpeg"
+//           alt="Angella Mulikatete"
+//           width={150}
+//           height={150}
+//           className="rounded-full mb-4"
+//         />
+//         <h3 className="font-heading text-xl font-semibold">Angella Mulikatete</h3>
+//         <p className="font-sans text-gray-600 text-center">Co-founder, School of Satoshi</p>
+//         <p className="font-sans text-gray-500 text-sm mt-2 text-center">Bitcoin Educator and Community Builder</p>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default TeamLead
