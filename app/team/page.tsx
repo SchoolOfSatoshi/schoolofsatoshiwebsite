@@ -65,7 +65,7 @@ export default function TeamPage() {
               {
                 name: "Afan Sabila",
                 role: "Co-founder Bitcoin Kampala & Gorilla Sats",
-                image: "/placeholder.svg",
+                image: "/assets/images/afan.jpeg",
                 twitter: "https://x.com/afansabila",
                 linkedin: "https://www.linkedin.com/in/babu-afan-381084251/",
               },
@@ -87,7 +87,7 @@ export default function TeamPage() {
                 name: "Akisibe Abdalaah",
                 role: "BTC Enthusiast",
                 image: "./assets/images/harymo.jpg",
-                twitter: "https://x.com/MukunguFelix",
+                twitter: "#",
                 linkedin: "#",
               },
                             {
