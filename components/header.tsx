@@ -22,7 +22,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-24 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/assets/images/logo.png" alt="logo" height={100} width={100} />
+          <Image src="/images/logo.png" alt="logo" height={100} width={100} />
         </Link>
         <nav className="hidden md:flex gap-6 p-10">
           <Link href="/" className="text-base font-medium transition-colors hover:text-orange-500">
@@ -42,7 +42,7 @@ export default function Header() {
           </Link>
         </nav>
         <div className="hidden md:flex gap-4">
-          <Link href="/apply">
+          <Link href="/apply-now">
             <Button variant="outline">Apply Now</Button>
           </Link>
           <Link href="https://geyser.fund/project/schoolofsatoshiuganda">
@@ -62,7 +62,7 @@ export default function Header() {
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
-                  <Image src="/assets/images/logo.jpg" alt="logo" height={10} width={140} />
+                  <Image src="/images/logo.jpg" alt="logo" height={10} width={140} />
                   {/* <span className="font-bold">School of Satoshi</span> */}
                   <span>
                     School of <span className="gradient-text">Satoshi</span>
@@ -148,7 +148,7 @@ export default function Header() {
 //     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 //       <div className="container flex h-16 items-center justify-between">
 //         <Link href="/" className="flex items-center gap-2">
-//           <img src="/assets/images/logo.jpg" alt="logo" height={10} width={140} className="object-contain" />
+//           <img src="/images/logo.jpg" alt="logo" height={10} width={140} className="object-contain" />
 //         </Link>
 //         <nav className="hidden md:flex gap-6 p-10">
 //           <Link href="/" className="text-base font-medium transition-colors hover:text-orange-500">
@@ -186,7 +186,7 @@ export default function Header() {
 //             <div className="flex flex-col h-full">
 //               <div className="flex items-center justify-between border-b pb-4">
 //                 <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
-//                   <img src="/assets/images/logo.jpg" alt="logo" height={32} width={120} className="object-contain" />
+//                   <img src="/images/logo.jpg" alt="logo" height={32} width={120} className="object-contain" />
 //                   <span>
 //                     School of <span className="gradient-text">Satoshi</span>
 //                   </span>

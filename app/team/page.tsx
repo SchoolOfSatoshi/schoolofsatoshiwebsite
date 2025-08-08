@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import TeamLead from "@/components/teamLead"
-import edith from "../../public/assets/images/edith.jpeg";
-import brindon from "../../public/assets/images/brindon.jpg"
+import edith from "../../public/images/edith.jpeg";
+import brindon from "../../public/images/brindon.jpg"
 
 export default function TeamPage() {
   return (
@@ -43,14 +43,14 @@ export default function TeamPage() {
               {
                 name: "Angella Wafwoyo",
                 role: "Founder / Lawyer & Lead Instructor",
-                image: "/assets/images/Angieee.jpeg",
+                image: "/images/Angieee.jpeg",
                 twitter: "https://x.com/Angella_Jude",
                 linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
               },
               {
                 name: "Angella Mulikatete",
                 role: "Co-Founder/ Software Developer",
-                image: "/assets/images/Angellina.jpeg",
+                image: "/images/Angellina.jpeg",
                 twitter: "https://x.com/AMulikatete",
                 linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
                 github: "https://github.com/Angella-Mulikatete",
@@ -58,49 +58,49 @@ export default function TeamPage() {
               {
                 name: "Brindon Mwiine",
                 role: "Founder Bitcoin Kampala & Gorilla Sats",
-                image: "/assets/images/brindon.jpg",
+                image: "/images/brindon.jpg",
                 twitter: "https://x.com/BrindonMwiine",
                 linkedin: "https://www.linkedin.com/in/brindon-mwiine/",
               },
               {
                 name: "Afan Sabila",
                 role: "Co-founder Bitcoin Kampala & Gorilla Sats",
-                image: "/assets/images/afan.jpeg",
+                image: "/images/afan.jpeg",
                 twitter: "https://x.com/afansabila",
                 linkedin: "https://www.linkedin.com/in/babu-afan-381084251/",
               },
               {
                 name: "Edith Mpumwiire",
                 role: "Growth Lead at BTC Dada & Accountant at Blink",
-                image: "./assets/images/edth.jpeg",
+                image: "/images/edth.jpeg",
                 twitter: "https://x.com/mpumwiredith",
                 linkedin: "https://www.linkedin.com/in/edith-mpumwire-b9aa9080/",
               },
               {
                 name: "Sabina Gitau",
                 role: "Co-founder at Tando",
-                image: "./assets/images/sabina.jpeg",
+                image: "/images/sabina.jpeg",
                 twitter: "https://x.com/waithiraah",
                 linkedin: "https://www.linkedin.com/in/sabina-gitau-6497b725a/",
               },
               {
                 name: "Akisibe Abdalaah",
                 role: "BTC Enthusiast",
-                image: "./assets/images/harymo.jpg",
+                image: "/images/harymo.jpg",
                 twitter: "#",
                 linkedin: "#",
               },
                             {
                 name: "Ritah Ssemakula",
                 role: "BTC Enthusiast",
-                image: "./assets/images/rytah.png",
+                image: "/images/rytah.png",
                 twitter: "#",
                 linkedin: "#",
               },
               {
                 name: "Victor",
                 role: "Alumni",
-                image: "./assets/images/vic.png",
+                image: "/images/vic.png",
                 twitter: "https://x.com/ntamugabumwevic",
                 linkedin: "https://www.linkedin.com/in/ntamugabumwevic/",
               },

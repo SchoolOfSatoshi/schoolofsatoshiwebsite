@@ -12,7 +12,7 @@ const TeamLead = () => {
         name: "Angella Wafwoyo",
         role: "Founder & Lead Instructor",
         bio: "Lawyer / Bitcoin educator", 
-        image: "/assets/images/Angieee.jpeg?height=300&width=300",
+        image: "/images/Angieee.jpeg?height=300&width=300",
         twitter: "https://x.com/Angella_Jude",
         linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
         github: "#",
@@ -21,7 +21,7 @@ const TeamLead = () => {
         name: "Angella Mulikatete",
         role: "Co-Founder/Programs Lead ",
         bio: "Software Engineer/ Developer ",
-        image: "/assets/images/Angellina.jpeg?height=300&width=300",
+        image: "/images/Angellina.jpeg?height=300&width=300",
         twitter: "https://x.com/AMulikatete",
         linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
         github: "https://github.com/Angella-Mulikatete",
@@ -80,7 +80,7 @@ export default TeamLead
 //       {/* Angella Wafwoyo */}
 //       <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
 //         <Image
-//           src="/assets/images/Angieee.jpeg"
+//           src="/images/Angieee.jpeg"
 //           alt="Angella Wafwoyo"
 //           width={150}
 //           height={150}
@@ -94,7 +94,7 @@ export default TeamLead
 //       {/* Angella Mulikatete */}
 //       <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
 //         <Image
-//           src="/assets/images/Angellina.jpeg"
+//           src="/images/Angellina.jpeg"
 //           alt="Angella Mulikatete"
 //           width={150}
 //           height={150}

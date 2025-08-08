@@ -11,7 +11,7 @@ const cohorts = [
   { 
     year: 2024, 
     name: 'Cohort 1', 
-    image: '/assets/images/cohort1.jpeg',
+    image: '/images/cohort1.jpeg',
     description: 'Our inaugural cohort that pioneered Bitcoin education.',
     totalStudents: 7,
     // successRate: '85%'
@@ -19,7 +19,7 @@ const cohorts = [
   { 
     year: 2024, 
     name: 'Cohort 2', 
-    image: '/assets/images/c2_2.jpeg',
+    image: '/images/c2_2.jpeg',
     description: 'Expanded curriculum with advanced Bitcoin Education',
     totalStudents: 10,
     // successRate: '92%'
@@ -27,7 +27,7 @@ const cohorts = [
   // { 
   //   year: 2024, 
   //   name: 'Cohort 3', 
-  //   image: '/assets/images/bitcoin3.jpeg',
+//   image: '/images/bitcoin3.jpeg',
   //   description: 'Cutting-edge blockchain and Web3 development programs.',
   //   totalStudents: 60,
   //   successRate: '95%'
@@ -192,7 +192,7 @@ export default PastCohorts;
 //   { 
 //     year: 2022, 
 //     name: 'Cohort 1', 
-//     image: '/assets/images/bitcoin3.jpeg',
+//     image: '/images/bitcoin3.jpeg',
 //     description: 'Our inaugural cohort that pioneered blockchain education.',
 //     totalStudents: 30,
 //     successRate: '85%'
@@ -200,7 +200,7 @@ export default PastCohorts;
 //   { 
 //     year: 2023, 
 //     name: 'Cohort 2', 
-//     image: '/assets/images/bitcoin3.jpeg',
+//     image: '/images/bitcoin3.jpeg',
 //     description: 'Expanded curriculum with advanced blockchain technologies.',
 //     totalStudents: 45,
 //     successRate: '92%'
@@ -208,7 +208,7 @@ export default PastCohorts;
 //   { 
 //     year: 2024, 
 //     name: 'Cohort 3', 
-//     image: '/assets/images/bitcoin3.jpeg',
+//     image: '/images/bitcoin3.jpeg',
 //     description: 'Cutting-edge blockchain and Web3 development programs.',
 //     totalStudents: 60,
 //     successRate: '95%'
@@ -354,7 +354,7 @@ export default PastCohorts;
 //   { 
 //     year: 2022, 
 //     name: 'Cohort 1', 
-//     image: '/assets/images/bitcoin3.jpeg',
+//     image: '/images/bitcoin3.jpeg',
 //     description: 'Our inaugural cohort that pioneered blockchain education.',
 //     totalStudents: 30,
 //     successRate: '85%'
@@ -493,9 +493,9 @@ export default PastCohorts;
 // import React from 'react';
 
 // const cohorts = [
-//   { year: 2022, name: 'Cohort 1', image: '/assets/images/bitcoin3.jpeg' },
-//   { year: 2023, name: 'Cohort 2', image: '/assets/images/bitcoin3.jpeg' },
-//   { year: 2024, name: 'Cohort 3', image: '/assets/images/bitcoin3.jpeg' }
+//   { year: 2022, name: 'Cohort 1', image: '/images/bitcoin3.jpeg' },
+//   { year: 2023, name: 'Cohort 2', image: '/images/bitcoin3.jpeg' },
+//   { year: 2024, name: 'Cohort 3', image: '/images/bitcoin3.jpeg' }
 // ];
 
 // const PastCohorts: React.FC = () => {

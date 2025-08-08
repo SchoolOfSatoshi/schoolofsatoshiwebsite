@@ -20,7 +20,7 @@ export default function Home() {
   const { ref: featuresRef, inView: featuresInView } = useInView({ triggerOnce: true });
   const { ref: programsRef, inView: programsInView } = useInView({ triggerOnce: true });
   const { ref: cohortsRef, inView: cohortsInView } = useInView({ triggerOnce: true });
-  const { ref: ctaRef, inView: ctaInView } = useInView({ triggerOnce: true });
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -53,7 +53,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Image
-                  src="/assets/images/Angie_Angie.jpeg"
+                  src="/images/Angie_Angie.jpeg"
                   alt="Bitcoin Education"
                   width={500}
                   height={400}
@@ -155,41 +155,10 @@ export default function Home() {
 
 
       <PastCohorts/>
-
+      <Testimonials/>
       <YouTubeVideoSection/>
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            ref={ctaRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
-          >
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Ready to Join the Bitcoin Revolution?
-              </h2>
-              <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Applications are now open for our upcoming cohorts. Take the first step towards your Bitcoin education
-                journey.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/apply">
-                <Button className="bg-white text-orange-500 hover:bg-gray-100">Apply Now</Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" className="border-white text-orange-300 hover:bg-orange-600">
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
     </div>
   );
 }
@@ -437,33 +406,6 @@ export default function Home() {
 //             <Link href="/cohorts">
 //               <Button variant="outline">View All Cohorts</Button>
 //             </Link>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-//                 Ready to Join the Bitcoin Revolution?
-//               </h2>
-//               <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-//                 Applications are now open for our upcoming cohorts. Take the first step towards your Bitcoin education
-//                 journey.
-//               </p>
-//             </div>
-//             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-//               <Link href="/apply">
-//                 <Button className="bg-white text-orange-500 hover:bg-gray-100">Apply Now</Button>
-//               </Link>
-//               <Link href="/contact">
-//                 <Button variant="outline" className="border-white text-white hover:bg-orange-600">
-//                   Contact Us
-//                 </Button>
-//               </Link>
-//             </div>
 //           </div>
 //         </div>
 //       </section>

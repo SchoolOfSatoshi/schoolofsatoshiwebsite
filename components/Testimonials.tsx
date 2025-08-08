@@ -3,29 +3,26 @@
 
 'use client'
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, QuoteIcon } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const testimonialsData = [
   {
     quote: '"Joining School of Satoshi was a life-changing decision. I now understand Bitcoin beyond the hype. Thank you!"',
     name: 'Angella Mulikatete',
-    cohort: 'Cohort 2 Graduate, 2024',
-    avatar: '/assets/images/Angie6.jpeg'
+    avatar: '/images/testimonial/personone.png'
   },
   {
     quote: '"The curriculum transformed my career trajectory. Incredible learning experience!"',
     name: 'Angellina',
-    cohort: 'Cohort 1 Graduate, 2023',
-    avatar: '/assets/images/Angie6.jpeg'
+    avatar: '/images/testimonial/personone.png'
   },
   {
     quote: '"Joining School of Satoshi was a life-changing decision. I now understand Bitcoin beyond the hype. Thank you!"',
     name: 'Angella ',
-    cohort: 'Cohort 3 Graduate, 2024',
-    avatar: '/assets/images/Angie6.jpeg'
+    avatar: '/images/testimonial/personone.png'
   },
 ];
 
@@ -33,13 +30,7 @@ const Testimonials: React.FC = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  // Auto-play: move to next testimonial every 7 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextTestimonial();
-    }, 7000);
-    return () => clearInterval(interval);
-  }, [currentTestimonial]);
+  // Movement only via arrows (no autoplay)
 
   const nextTestimonial = () => {
     setDirection(1);
@@ -70,82 +61,62 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-[#FCFEF9] to-[#f8f5f0] relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-[#ffecca] to-[#f8f5f0] relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Intro Section */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <div className="h-0.5 w-12 bg-gray-300"></div>
-              <span className="text-gray-600 text-sm uppercase tracking-wider">
-                Testimonials
-              </span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-              Stories from <br />Our Students
-            </h2>
-            {/* <p className="text-gray-600 max-w-md">
-              Many learners have transformed their careers through School of Satoshi's innovative blockchain education programs.
-            </p> */}
-            <div className="flex space-x-4">
-              <Button
-                onClick={prevTestimonial} 
-                className="border border-gray-300 hover:bg-gray-100 transition-colors rounded-full w-12 h-12 flex items-center justify-center group"
-              >
-                <ChevronLeft className="text-gray-600 group-hover:text-black" />
-              </Button>
-              <Button
-                onClick={nextTestimonial} 
-                className="bg-black text-white hover:bg-gray-800 transition-colors rounded-full w-12 h-12 flex items-center justify-center group"
-              >
-                <ChevronRight className="text-white group-hover:text-gray-300" />
-              </Button>
-            </div>
-          </div>
+        {/* Heading */}
+        <div className="mb-8 text-left mx-auto max-w-4xl px-12">
+          <h2 className="text-4xl font-bold text-gray-900 leading-tight">Student Testimonials</h2>
+        </div>
 
-          {/* Dynamic Testimonial Carousel */}
-          <div className="relative overflow-hidden">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div 
-                key={currentTestimonial}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.5 }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(event, info) => {
-                  if (info.offset.x < -100) {
-                    nextTestimonial();
-                  } else if (info.offset.x > 100) {
-                    prevTestimonial();
-                  }
-                }}
-                className="bg-white rounded-2xl shadow-lg p-8 relative max-w-lg mx-auto"
-              >
-                <QuoteIcon className="absolute top-4 left-4 text-gray-200 w-16 h-16" />
-                <blockquote className="text-xl font-medium text-gray-800 mb-6 relative z-10">
-                  {testimonial.quote}
-                </blockquote>
-                <div className="flex items-center space-x-4">
-                  <Image 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name} 
-                    width={64}
-                    height={64}
-                    className="rounded-full border-4 border-gray-100 shadow-md"
-                  />
-                  <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.cohort}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+        {/* Carousel below heading: Image left, Text right */}
+        <div className="relative overflow-visible mx-auto max-w-4xl px-12">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentTestimonial}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5 }}
+              className="grid items-center gap-4 sm:gap-6 md:grid-cols-[272px_1fr]"
+            >
+              {/* Left Image */}
+              <div className="relative mx-auto md:mx-0 w-[272px] h-[272px]">
+                <Image
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  width={272}
+                  height={272}
+                  className="w-[272px] h-[272px] rounded-full object-cover shadow-lg"
+                />
+              </div>
+
+              {/* Right Text */}
+              <div className="p-2 relative">
+                <p className="text-xl font-medium text-gray-800 mb-6 max-w-[560px]">{testimonial.quote}</p>
+                <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Left/Right controls */}
+          <button
+            type="button"
+            onClick={prevTestimonial}
+            aria-label="Previous testimonial"
+            className="absolute -left-6 sm:-left-10 md:-left-14 top-1/2 -translate-y-1/2 p-2 text-gray-800 hover:text-black transition-colors"
+          >
+            <ArrowLeft size={40} strokeWidth={1.75} />
+          </button>
+          <button
+            type="button"
+            onClick={nextTestimonial}
+            aria-label="Next testimonial"
+            className="absolute -right-6 sm:-right-10 md:-right-14 top-1/2 -translate-y-1/2 p-2 text-gray-800 hover:text-black transition-colors"
+          >
+            <ArrowRight size={40} strokeWidth={1.75} />
+          </button>
         </div>
       </div>
 

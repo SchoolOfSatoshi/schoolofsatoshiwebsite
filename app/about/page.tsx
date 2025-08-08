@@ -119,10 +119,10 @@ import Miniaboutus from "@/components/mini-aboutus"
 import TeamLead from "@/components/teamLead"
 
 const images = [
-  "/assets/images/c2_3.jpeg",
-  "/assets/images/sos1.jpeg",
-  "/assets/images/sos2.jpeg",
-  "/assets/images/c1_1.jpeg",
+  "/images/c2_3.jpeg",
+  "/images/sos1.jpeg",
+  "/images/sos2.jpeg",
+  "/images/c1_1.jpeg",
 ]
 
 export default function AboutPage() {

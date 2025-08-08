@@ -68,7 +68,7 @@ export default function CohortsPage() {
                         <div className="pt-4">
                           <h4 className="text-sm font-medium mb-2">Class Photo:</h4>
                           <Image
-                            src="/assets/images/cohort1.jpeg"
+                            src="/images/cohort1.jpeg"
                             alt="Fall 2023 Advanced Protocol Development Cohort"
                             width={400}
                             height={200}
@@ -107,7 +107,7 @@ export default function CohortsPage() {
                         <div className="pt-4">
                           <h4 className="text-sm font-medium mb-2">Class Photo:</h4>
                           <Image
-                            src="/assets/images/c2_2.jpeg"
+                            src="/images/c2_2.jpeg"
                             alt="Fall 2023 Developer Bootcamp Cohort"
                             width={400}
                             height={200}

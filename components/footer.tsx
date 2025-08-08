@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { Bitcoin, Facebook, Github, Instagram, Linkedin, Twitter, X } from "lucide-react"
 import { FC } from 'react'
-import Image from 'next/image';
+import Image from 'next/image'
+import { SiTiktok } from "@icons-pack/react-simple-icons"
 
 const Footer: FC = () => {
   // Social media links - replace with actual URLs
@@ -22,7 +22,7 @@ const Footer: FC = () => {
     //   url: "https://www.youtube.com/@SchoolofSatoshi" 
     // },
     { 
-      icon: "M9 12a1 1 0 0 0 1 1h2.5L12 17l1-4h2.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H10a1 1 0 0 0-1 1v9z M6.5 12C6.5 8.41 9.41 5.5 13 5.5S19.5 8.41 19.5 12 16.59 18.5 13 18.5 6.5 15.59 6.5 12z M19.59 6.69A5.97 5.97 0 0 0 22 12c0 3.31-2.69 6-6 6v-6h4.59z", 
+      icon: "tiktok", 
       label: "TikTok", 
       url: "https://www.tiktok.com/@school_of_satoshi?_t=ZM-8y1h3Q4Hsd3&_r=1" 
     },
@@ -34,48 +34,89 @@ const Footer: FC = () => {
   ];
 
   return (
-    <footer className="w-full border-t bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-4">
-          
-          {/* Logo and Description */}
-          <div className="flex flex-col gap-3 sm:gap-4 col-span-1 md:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 w-fit">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 relative">
-                <Image 
-                  src="/assets/images/logo.png" 
-                  alt="School of Satoshi logo" 
-                  fill
-                  className="rounded-lg object-cover"
+    <footer className="relative w-full">
+      {/* Newsletter CTA (separate from main footer background) */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-20 overflow-hidden rounded-3xl bg-orange-500 shadow-xl -mb-10 md:-mb-16">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-10 sm:px-10 md:py-12 lg:px-14">
+            {/* Copy + Form */}
+            <div className="max-w-xl">
+              <p className="uppercase tracking-wider text-xs sm:text-sm text-orange-100/90">Subscribe to our</p>
+              <h2 className="mt-1 text-2xl sm:text-3xl lg:text-4xl font-heading font-bold leading-tight text-white">
+                Newsletter
+              </h2>
+              <p className="mt-3 text-white/90 text-sm sm:text-base">
+                Get the latest updates on programs, cohorts, and community events.
+              </p>
+              <form className="mt-5 w-full max-w-lg">
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full rounded-xl border-0 px-4 pr-32 py-3 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    className="absolute right-1 top-1 bottom-1 rounded-lg bg-gray-900 px-4 text-sm font-semibold text-white hover:bg-gray-800 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* Right Illustration */}
+            <div className="relative md:justify-self-end">
+              <Image
+                src="/images/newsletter-img.png"
+                alt="Newsletter illustration"
+                width={742}
+                height={540}
+                priority
+                className="w-full max-w-[742px] h-auto object-contain md:ml-auto"
                 />
               </div>
-              <span className="text-lg sm:text-xl font-bold">School of Satoshi</span>
+          </div>
+
+          {/* Decorative gradient overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-orange-400/30" />
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="relative z-10 bg-[#170E2A] text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-12">
+        {/* Logo on top */}
+        <Link href="/" className="flex items-center gap-3 w-fit">
+          <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+            <Image src="/images/logo.png" alt="School of Satoshi logo" fill className="object-cover rounded-lg" />
+          </div>
             </Link>
-            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
+
+        {/* Divider below logo */}
+        <div className="my-8 border-t border-white/10" />
+
+        {/* Four columns */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* 1. Description */}
+          <div>
+            <p className="max-w-md text-sm leading-relaxed text-white/70">
               To build a financially sovereign ecosystem in Uganda through practical, community-based Bitcoin education rooted in self-custody
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
+          {/* 2. Resources */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">Resources</h3>
+            <ul className="mt-4 space-y-2">
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
-                // { href: "/programs", label: "Programs" },
                 { href: "/cohorts", label: "Previous Cohorts" },
                 { href: "/team", label: "Team" },
-                // { href: "/contact", label: "Contact" }
               ].map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
-                    className="text-sm sm:text-base text-gray-600 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors duration-200 hover:underline"
-                  >
+                  <Link href={link.href} className="text-sm text-white/70 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -83,36 +124,47 @@ const Footer: FC = () => {
             </ul>
           </div>
 
-          {/* Contact Information */}
-          <div className="flex flex-col">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
-              Contact
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li className="flex items-start gap-2">
-                <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">📧</span>
-                <a 
-                  href="mailto:schoolofsatoshi016@gmail.com" 
-                  className="text-sm sm:text-base text-gray-600 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors duration-200 hover:underline"
-                >
-                  schoolofsatoshi016@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">📍</span>
-                <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                  Kampala, Uganda
-                </span>
-              </li>
+          {/* 3. Resources */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">Resources</h3>
+            <ul className="mt-4 space-y-2">
+              {[
+                { href: "/programs", label: "Programs" },
+                { href: "/videos", label: "Videos" },
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/terms", label: "Terms of Service" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-white/70 hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Social Media */}
-          <div className="flex flex-col">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
-              Follow Us
-            </h3>
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+          {/* 4. Contact Us */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">Contact Us</h3>
+            <ul className="mt-4 space-y-3 text-sm text-white/80">
+              <li>
+                <a href="mailto:schoolofsatoshi016@gmail.com" className="hover:text-white transition-colors">
+                  schoolofsatoshi016@gmail.com
+                </a>
+              </li>
+              <li>
+                <span>Kampala, Uganda</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider below columns */}
+        <div className="mt-10 border-t border-white/10" />
+
+        {/* Social icons below */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <p className="text-sm text-white/85">Totally free content here 👉</p>
               {socialLinks.map((social, index) => (
                 <Link 
                   key={index}
@@ -120,54 +172,22 @@ const Footer: FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow us on ${social.label}`}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-orange-500 hover:bg-orange-50 dark:hover:text-orange-400 dark:hover:bg-orange-900/20 transition-all duration-200 hover:scale-105 hover:shadow-md"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 text-black hover:bg-orange-600 transition-colors"
                 >
+              {social.icon === 'tiktok' ? (
+                <SiTiktok size={20} color="currentColor" />
+              ) : (
                   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={social.icon} />
+                  <path d={social.icon as string} />
                   </svg>
+              )}
                 </Link>
               ))}
             </div>
             
-            {/* Newsletter Signup */}
-            <div className="mt-4 sm:mt-6">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                Stay updated with our latest news
-              </p>
-              <div className="flex flex-col xs:flex-row gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-1 px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
-                <button className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium rounded-md transition-colors duration-200 whitespace-nowrap">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center border-t border-gray-200 dark:border-gray-700 pt-6 sm:pt-8 mt-8 sm:mt-10 gap-4 sm:gap-0">
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
-            &copy; {new Date().getFullYear()} School of Satoshi. All rights reserved.
-          </p>
-          
-          <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
-            {[
-              { href: "/privacy", label: "Privacy Policy" },
-              { href: "/terms", label: "Terms of Service" },
-              { href: "/cookies", label: "Cookie Policy" }
-            ].map((link) => (
-              <Link 
-                key={link.href}
-                href={link.href} 
-                className="text-xs sm:text-sm text-gray-500 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors duration-200 hover:underline"
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Divider and copyright */}
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <p className="text-xs sm:text-sm text-white/60">&copy; {new Date().getFullYear()} School of Satoshi. All rights reserved.</p>
           </div>
         </div>
       </div>

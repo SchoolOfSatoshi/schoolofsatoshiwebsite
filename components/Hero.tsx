@@ -36,7 +36,7 @@
 //   //       </div>
 //   //     {/*if I want images to appear on mobile view change:  className="w-24 h-24 rounded-full absolute top-[50%] -right-10 border-2 border-orange-500 block" */}
 //   //     <Image
-//   //       src="/assets/images/c1.jpeg"
+//   //       src="/images/c1.jpeg"
 //   //       alt="image"
 //   //       className="w-24 h-24 rounded-full absolute top-[50%] -right-10 border-2 border-orange-500 hidden md:block"
 //   //       priority
@@ -44,7 +44,7 @@
 //   //       width={200}
 //   //     />
 //   //     <Image
-//   //       src="/assets/images/sos1.jpeg"
+//   //       src="/images/sos1.jpeg"
 //   //       alt="image"
 //   //       className="w-24 h-24 rounded-full absolute top-[50%] -left-10 border-2 border-orange-500 hidden md:block"
 //   //       priority
@@ -65,7 +65,7 @@
 //   //       }}
 //   //     >
 //   //       <Image
-//   //         src="/assets/images/c2_2.jpeg"
+//   //         src="/images/c2_2.jpeg"
 //   //         alt="image"
 //   //         className="w-24 h-24 rounded-full absolute top-[50%] -right-8 border-2 border-orange-300 hidden md:block"
 //   //         priority
@@ -73,7 +73,7 @@
 //   //         width={200}
 //   //       />
 //   //        {/* <Image
-//   //         src="/assets/images/c1_1.jpeg"
+//   //         src="/images/c1_1.jpeg"
 //   //         alt="image"
 //   //         className="w-16 h-16 rounded-full absolute top-[50%] -right-8 border-2 border-orange-300 hidden md:block"
 //   //         priority
@@ -310,7 +310,7 @@ const Hero = () => {
           </div>
 
           <Image
-            src="/assets/images/c1.jpeg"
+            src="/images/c1.jpeg"
             alt="image"
             className="w-24 h-24 rounded-full absolute top-[50%] -right-10 border-2 border-orange-500 hidden md:block"
             priority
@@ -318,7 +318,7 @@ const Hero = () => {
             width={200}
           />
           <Image
-            src="/assets/images/sos1.jpeg"
+            src="/images/sos1.jpeg"
             alt="image"
             className="w-24 h-24 rounded-full absolute top-[50%] -left-10 border-2 border-orange-500 hidden md:block"
             priority
@@ -339,7 +339,7 @@ const Hero = () => {
             }}
           >
             <Image
-              src="/assets/images/c2_2.jpeg"
+              src="/images/c2_2.jpeg"
               alt="image"
               className="w-24 h-24 rounded-full absolute top-[50%] -right-8 border-2 border-orange-300 hidden md:block"
               priority
