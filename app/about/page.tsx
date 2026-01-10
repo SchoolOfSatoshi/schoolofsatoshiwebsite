@@ -91,7 +91,7 @@ export default function AboutPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen pt-10">
+    <div className="flex flex-col min-h-screen pt-20">
       {/* Enhanced Hero Section */}
       <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-background py-10 md:py-16">
         {/* Dynamic Background Elements */}
