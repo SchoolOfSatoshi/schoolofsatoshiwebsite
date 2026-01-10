@@ -6,63 +6,83 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 const TeamLead = () => {
   return (
-    <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-2">
-    {[
-      {
-        name: "Angella Wafwoyo",
-        role: "Founder & Lead Instructor",
-        bio: "Lawyer / Bitcoin educator", 
-        image: "/assets/images/Angieee.jpeg?height=300&width=300",
-        twitter: "https://x.com/Angella_Jude",
-        linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
-        github: "#",
-      },
-      {
-        name: "Angella Mulikatete",
-        role: "Co-Founder/Programs Lead ",
-        bio: "Software Engineer/ Developer ",
-        image: "/assets/images/Angellina.jpeg?height=300&width=300",
-        twitter: "https://x.com/AMulikatete",
-        linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
-        github: "https://github.com/Angella-Mulikatete",
-      },
-    ].map((member, index) => (
-      <Card key={index} className='px-2'>
-        <CardHeader  className="relative flex flex-col items-center p-6 rounded  cursor-pointer">
-          <div className="relative w-[150px] h-[150px] rounded-full overflow-hidden mb-2 flex items-center justify-center">
+    <div className="mx-auto flex flex-col md:flex-row items-center justify-center gap-12 py-12">
+      {[
+        {
+          name: "Angella Wafwoyo",
+          role: "Founder & Lead Instructor",
+          bio: "Lawyer / Bitcoin educator passionate about empowering communities through financial sovereignty.",
+          skills: ["Law", "Bitcoin Education", "Public Speaking"],
+          image: "/assets/images/Angieee.jpeg",
+          twitter: "https://x.com/Angella_Jude",
+          linkedin: "https://www.linkedin.com/in/wafoyo-angella-403528255/",
+          github: "#",
+        },
+        {
+          name: "Angella Mulikatete",
+          role: "Co-Founder / Programs Lead",
+          bio: "Software Engineer and Developer dedicated to building robust Bitcoin education programs.",
+          skills: ["Software Engineering", "Program Management", "Development"],
+          image: "/assets/images/Angellina.jpeg",
+          twitter: "https://x.com/AMulikatete",
+          linkedin: "https://www.linkedin.com/in/angella-mulikatete-7b83371a2/",
+          github: "https://github.com/Angella-Mulikatete",
+        },
+      ].map((member, index) => (
+        <div key={index} className="group relative w-full max-w-[300px] h-[160px] hover:h-[450px] transition-all duration-500 ease-in-out bg-background border border-border rounded-lg overflow-hidden shadow-xl cursor-default">
+
+          {/* Header */}
+          <div className="h-[80px] bg-primary w-full transition-all duration-500 group-hover:bg-primary/80"></div>
+
+          {/* Avatar */}
+          <div className="absolute top-[40px] left-[20px] w-[80px] h-[80px] rounded-full bg-background border-[5px] border-background overflow-hidden transition-all duration-500 group-hover:w-[120px] group-hover:h-[120px] group-hover:top-[40px] group-hover:left-[90px] group-hover:border-[5px] group-hover:border-background z-10 shadow-md">
             <Image
-              src={member.image || "/placeholder.svg"}
+              src={member.image}
               alt={member.name}
-              width={150}
-              height={150}
-              className="object-cover w-full h-full"
-              style={{ objectPosition: "center" }}
+              width={120}
+              height={120}
+              className="w-full h-full object-cover"
             />
           </div>
 
-          <CardTitle className=" text-center">{member.name}</CardTitle>
-          <CardDescription className='text-center'>{member.role}</CardDescription>
-          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">{member.bio}</p>
-        </CardHeader>
-        <CardContent>
-          <div className="flex space-x-4 justify-center">
-            <Link href={member.twitter} className="text-gray-500 hover:text-orange-500">
+          {/* Text Content */}
+          <div className="px-6 pt-12 text-justify w-full transition-all duration-500 group-hover:pt-[100px]">
+            <h3 className="text-xl font-bold text-foreground mb-2 whitespace-nowrap overflow-hidden text-ellipsis group-hover:text-center transition-all duration-500">
+              {member.name}
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-4">
+              {member.bio}
+            </p>
+          </div>
+
+          {/* Skills / Role (Positioned absolutely or nicely in flow for hover) */}
+          <div className="absolute top-[50px] right-[-200px] group-hover:right-[20px] group-hover:top-[280px] transition-all duration-700 ease-out p-4 text-right">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Expertise</h4>
+            <div className="flex flex-col gap-1 items-end">
+              {member.skills.map((skill, i) => (
+                <span key={i} className="text-xs font-medium bg-secondary/50 px-2 py-1 rounded text-secondary-foreground">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Icons Footer */}
+          <div className="absolute bottom-0 left-0 w-full py-4 bg-secondary/10 flex justify-center gap-6 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+            <Link href={member.twitter} className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-200">
               <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
             </Link>
-            <Link href={member.linkedin} className="text-gray-500 hover:text-orange-500">
+            <Link href={member.linkedin} className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-200">
               <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href={member.github} className="text-gray-500 hover:text-orange-500">
+            <Link href={member.github} className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-200">
               <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
             </Link>
           </div>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
+
+        </div>
+      ))}
+    </div>
   )
 }
 
