@@ -3,189 +3,214 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bitcoin, BookOpen, GraduationCap, Users,  ShieldMinus ,Eye , Goal} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bitcoin, BookOpen, GraduationCap, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Miniaboutus from "@/components/mini-aboutus";
-import Testimonials from "@/components/Testimonials";
 import PastCohorts from "@/components/PastCohorts";
 import Hero from "@/components/Hero";
-import Features from "@/components/features";
 import YouTubeVideoSection from "@/components/videoComponent";
-//import YouTubeVideoSection from "@/components/bitcoin-kiboozi";
+import ServiceFlipCard from "@/components/ServiceFlipCard";
 
 export default function Home() {
-  const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true });
-  const { ref: featuresRef, inView: featuresInView } = useInView({ triggerOnce: true });
-  const { ref: programsRef, inView: programsInView } = useInView({ triggerOnce: true });
-  const { ref: cohortsRef, inView: cohortsInView } = useInView({ triggerOnce: true });
-  const { ref: ctaRef, inView: ctaInView } = useInView({ triggerOnce: true });
+  // Variants for animations
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      <Hero />
 
-      <Hero/>
-      <section className="w-full py-8 md:py-12 lg:py-16 bg-gradient-to-b from-amber-50 to-white">
-        <div className="container px-4 md:px-6">
+      {/* About Section */}
+      <section className="w-full py-16 md:py-20 bg-secondary/30">
+        <div className="container px-4">
+
           <motion.div
-            ref={heroRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]"
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
           >
-            <div className="flex flex-col justify-center space-y-2">
-              <div className="space-y-1">
-              <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-4xl/none text-orange-500 ">What drives Us</h1>
-              <Miniaboutus/>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row py-3">
-                <Link href="/about">
-                  <Button className="bg-orange-500 hover:bg-orange-600">Learn More</Button>
-                </Link>
+            <h2 className="text-3xl font-heading font-bold tracking-tight text-primary sm:text-4xl">What Drives Us</h2>
+            <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+          </motion.div>
+
+          <div className="grid gap-12 lg:grid-cols-2 items-start">
+            {/* Left Column: Mission/Vision Content */}
+            <div className="flex flex-col justify-center space-y-8">
+              <div className="text-muted-foreground">
+                <Miniaboutus />
               </div>
             </div>
-            <div className="flex items-center justify-center">
+
+            {/* Right Column: Image */}
+            <div className="flex items-center justify-center h-full">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ scale: 1.02 }}
+                className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 glass-card w-full max-w-md aspect-[3/4]"
               >
                 <Image
-                  src="/assets/images/Angie_Angie.jpeg"
-                  alt="Bitcoin Education"
-                  width={500}
-                  height={400}
-                  className="rounded-lg object-cover"
+                  src="/assets/images/Angie_angy.jpeg"
+                  alt="Bitcoin Education Team"
+                  fill
+                  className="object-cover"
                 />
               </motion.div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      {/* <Features/> */}
-      <section className="w-full py-8 md:py-10 lg:py-16">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            ref={featuresRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
-          >
-            <div className="space-y-2 px-4 md:px-6">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Why School of Satoshi
-              </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              We are committed to providing comprehensive financial education, with a strong emphasis on Bitcoin and its potential to drive economic empowerment. Our aim is to equip Ugandans with the knowledge and practical skills needed to navigate the financial landscape, break free from traditional barriers, and harness the power of Bitcoin as a tool for financial inclusion and independence.  
-              </p>
-            </div>
-
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="w-full py-8 md:py-10 lg:py-12">
-        <div className="container px-4 md:px-6">
-          <div className="px-4 md:px-6 text-center ">      
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Services
-            </h2>
           </div>
-    
+
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="w-full py-2 bg-secondary/20">
+        <div className="container px-4">
           <motion.div
-            className="mx-auto grid max-w-5xl items-stretch gap-4 py-8 md:grid-cols-3 lg:grid-cols-3"
-            initial={{ opacity: 0 }}
-            animate={featuresInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
           >
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card className="flex flex-col flex-grow">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <Bitcoin className="h-8 w-8 text-orange-500" />
-                  <div className="grid gap-1">
-                    <CardTitle>Bitcoin Fundamentals</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Learn the core concepts of Bitcoin, blockchain technology, and cryptocurrency.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card className="flex flex-col flex-grow">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <GraduationCap className="h-8 w-8 text-orange-500" />
-                  <div className="grid gap-1">
-                    <CardTitle>Community Build</CardTitle>
-                  </div>
-                </CardHeader>
-               <CardContent className="flex-grow">
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Learn from industry professionals with years of experience in Bitcoin EcoSystem.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Card className="flex flex-col flex-grow">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <BookOpen className="h-8 w-8 text-orange-500" />
-                  <div className="grid gap-1">
-                    <CardTitle>Sensitization and Meetups</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Networking, Practical projects and real-world applications to reinforce your knowledge.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+            <h2 className="text-3xl font-heading font-bold tracking-tight sm:text-4xl text-primary">
+              Our Services
+            </h2>
+          </motion.div>
+
+
+
+          <motion.div
+            className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {[
+              {
+                icon: Bitcoin,
+                title: "Bitcoin Fundamentals",
+                desc: "Learn the core concepts of Bitcoin, blockchain technology."
+              },
+              {
+                icon: GraduationCap,
+                title: "Community Build",
+                desc: "Learn from industry professionals with years of experience in Bitcoin EcoSystem."
+              },
+              {
+                icon: BookOpen,
+                title: "Sensitization and Meetups",
+                desc: "Networking, Practical projects and real-world applications to reinforce your knowledge."
+              }
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                className="h-full"
+              >
+                <ServiceFlipCard icon={service.icon} title={service.title} desc={service.desc} />
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
+      <PastCohorts />
 
-      <PastCohorts/>
-
-      <YouTubeVideoSection/>
+      {/* <YouTubeVideoSection /> */}
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-        <div className="container px-4 md:px-6">
+      <section className="w-full py-16 md:py-24 bg-background overflow-hidden relative">
+        <div className="container px-4">
           <motion.div
-            ref={ctaRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-[2.5rem] bg-primary px-6 py-16 md:px-12 md:py-24 shadow-2xl"
           >
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Ready to Join the Bitcoin Revolution?
-              </h2>
-              <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Applications are now open for our upcoming cohorts. Take the first step towards your Bitcoin education
-                journey.
-              </p>
+            {/* Background Video */}
+            <div className="absolute top-0 left-0 w-full h-full z-0">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
+              >
+                <source src="/assets/videos/sos_video.mp4" type="video/mp4" />
+              </video>
+              {/* Overlay to ensure text readability */}
+              <div className="absolute top-0 left-0 w-full h-full bg-primary/80 mix-blend-multiply"></div>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/apply">
-                <Button className="bg-white text-orange-500 hover:bg-gray-100">Apply Now</Button>
-              </Link>
-              <Link href="/contact">
-                <Button variant="outline" className="border-white text-orange-300 hover:bg-orange-600">
-                  Contact Us
-                </Button>
-              </Link>
+
+            {/* Decorative Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+              <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+              <Bitcoin className="absolute -right-10 top-1/2 -translate-y-1/2 w-[500px] h-[500px] text-white/5 opacity-10 -rotate-12 hidden lg:block" />
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-8 max-w-4xl mx-auto">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-heading font-bold tracking-tight text-white sm:text-4xl md:text-5xl drop-shadow-sm">
+                  Ready to Join the Bitcoin Revolution?
+                </h2>
+                <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light">
+                  Applications are now open for our upcoming cohorts. Take the first step towards mastering the future of finance and technology.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
+                <Link href="/apply">
+                  <Button
+                    size="lg"
+                    className="bg-white text-primary hover:bg-white/90 text-lg font-bold px-10 h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all hover:-translate-y-1"
+                  >
+                    Apply Now <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-white/30 bg-white/5 text-white hover:bg-white/10 text-lg font-semibold px-10 h-14 rounded-full backdrop-blur-sm transition-all hover:-translate-y-1"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -193,283 +218,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//OLD CODE
-
-
-
-// import Link from "next/link"
-// import Image from "next/image"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Bitcoin, BookOpen, GraduationCap, Users } from "lucide-react"
-
-// export default function Home() {
-//   return (
-//     <div className="flex flex-col min-h-screen">
-//       {/* Hero Section */}
-//       <section className="w-full py-12 md:py-10 lg:py-10 bg-gradient-to-b from-amber-50 to-white">
-//         <div className="container px-4 md:px-6">
-//           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
-//             <div className="flex flex-col justify-center space-y-4">
-//               <div className="space-y-2">
-//                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">School of Satoshi</h1>
-//                 <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-//                   Empowering the next generation of Bitcoin innovators through world-class education and hands-on
-//                   learning.
-//                 </p>
-//               </div>
-//               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-//                 <Link href="/programs">
-//                   <Button className="bg-orange-500 hover:bg-orange-600">Explore Programs</Button>
-//                 </Link>
-//                 <Link href="/about">
-//                   <Button variant="outline">Learn More</Button>
-//                 </Link>
-//               </div>
-//             </div>
-//             <div className="flex items-center justify-center">
-//               <Image
-//                 src="/placeholder.svg?height=400&width=400"
-//                 alt="Bitcoin Education"
-//                 width={400}
-//                 height={400}
-//                 className="rounded-lg object-cover"
-//               />
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Features Section */}
-//       <section className="w-full py-12 md:py-10 lg:py-10">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-//                 Why Choose School of Satoshi
-//               </h2>
-//               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-//                 Our comprehensive Bitcoin education programs are designed to take you from beginner to expert.
-//               </p>
-//             </div>
-//           </div>
-//           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-//             <Card>
-//               <CardHeader className="flex flex-row items-center gap-4">
-//                 <Bitcoin className="h-8 w-8 text-orange-500" />
-//                 <div className="grid gap-1">
-//                   <CardTitle>Bitcoin Fundamentals</CardTitle>
-//                 </div>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   Learn the core concepts of Bitcoin, blockchain technology, and cryptocurrency.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card>
-//               <CardHeader className="flex flex-row items-center gap-4">
-//                 <GraduationCap className="h-8 w-8 text-orange-500" />
-//                 <div className="grid gap-1">
-//                   <CardTitle>Expert Instructors</CardTitle>
-//                 </div>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   Learn from industry professionals with years of experience in Bitcoin and blockchain.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card>
-//               <CardHeader className="flex flex-row items-center gap-4">
-//                 <BookOpen className="h-8 w-8 text-orange-500" />
-//                 <div className="grid gap-1">
-//                   <CardTitle>Hands-on Learning</CardTitle>
-//                 </div>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   Practical projects and real-world applications to reinforce your knowledge.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Programs Preview */}
-//       <section className="w-full py-12 md:py-10 lg:py-10 bg-gray-50 dark:bg-gray-900">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Programs</h2>
-//               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-//                 Comprehensive Bitcoin education for all skill levels.
-//               </p>
-//             </div>
-//           </div>
-//           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-//             <Card>
-//               <CardHeader>
-//                 <CardTitle>Bitcoin Basics</CardTitle>
-//                 <CardDescription>For Beginners</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   A 4-week introduction to Bitcoin fundamentals, perfect for newcomers.
-//                 </p>
-//               </CardContent>
-//               <CardFooter>
-//                 <Link href="/programs#basics">
-//                   <Button variant="outline">Learn More</Button>
-//                 </Link>
-//               </CardFooter>
-//             </Card>
-//             <Card>
-//               <CardHeader>
-//                 <CardTitle>Developer Bootcamp</CardTitle>
-//                 <CardDescription>For Aspiring Developers</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   An 8-week intensive program focused on Bitcoin and Lightning Network development.
-//                 </p>
-//               </CardContent>
-//               <CardFooter>
-//                 <Link href="/programs#developer">
-//                   <Button variant="outline">Learn More</Button>
-//                 </Link>
-//               </CardFooter>
-//             </Card>
-//             <Card>
-//               <CardHeader>
-//                 <CardTitle>Advanced Protocol</CardTitle>
-//                 <CardDescription>For Experienced Developers</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <p className="text-sm text-gray-500 dark:text-gray-400">
-//                   A 12-week deep dive into advanced Bitcoin protocol development and security.
-//                 </p>
-//               </CardContent>
-//               <CardFooter>
-//                 <Link href="/programs#advanced">
-//                   <Button variant="outline">Learn More</Button>
-//                 </Link>
-//               </CardFooter>
-//             </Card>
-//           </div>
-//           <div className="flex justify-center mt-8">
-//             <Link href="/programs">
-//               <Button className="bg-orange-500 hover:bg-orange-600">View All Programs</Button>
-//             </Link>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Previous Cohorts Preview */}
-//       <section className="w-full py-12 md:py-10 lg:py-10">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Previous Cohorts</h2>
-//               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-//                 Our alumni are making waves in the Bitcoin ecosystem.
-//               </p>
-//             </div>
-//           </div>
-//           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2">
-//             <Card>
-//               <CardHeader>
-//                 <CardTitle>Cohort #1 - Spring 2023</CardTitle>
-//                 <CardDescription>Developer Bootcamp</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <div className="flex items-center space-x-2">
-//                   <Users className="h-5 w-5 text-gray-500" />
-//                   <span className="text-sm text-gray-500">24 Graduates</span>
-//                 </div>
-//                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-//                   Our inaugural cohort focused on Lightning Network development and Bitcoin scripting.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card>
-//               <CardHeader>
-//                 <CardTitle>Cohort #2 - Fall 2023</CardTitle>
-//                 <CardDescription>Advanced Protocol</CardDescription>
-//               </CardHeader>
-//               <CardContent>
-//                 <div className="flex items-center space-x-2">
-//                   <Users className="h-5 w-5 text-gray-500" />
-//                   <span className="text-sm text-gray-500">18 Graduates</span>
-//                 </div>
-//                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-//                   This cohort specialized in advanced Bitcoin protocol development and contributed to open-source
-//                   projects.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//           <div className="flex justify-center mt-8">
-//             <Link href="/cohorts">
-//               <Button variant="outline">View All Cohorts</Button>
-//             </Link>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="w-full py-12 md:py-24 lg:py-32 bg-orange-500 text-white">
-//         <div className="container px-4 md:px-6">
-//           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-//             <div className="space-y-2">
-//               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-//                 Ready to Join the Bitcoin Revolution?
-//               </h2>
-//               <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-//                 Applications are now open for our upcoming cohorts. Take the first step towards your Bitcoin education
-//                 journey.
-//               </p>
-//             </div>
-//             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-//               <Link href="/apply">
-//                 <Button className="bg-white text-orange-500 hover:bg-gray-100">Apply Now</Button>
-//               </Link>
-//               <Link href="/contact">
-//                 <Button variant="outline" className="border-white text-white hover:bg-orange-600">
-//                   Contact Us
-//                 </Button>
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
-
-
-

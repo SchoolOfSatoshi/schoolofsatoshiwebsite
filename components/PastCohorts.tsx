@@ -1,148 +1,137 @@
 'use client'
 
-import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import styles from './PastCohorts.module.css';
 
 const cohorts = [
-  { 
-    year: 2024, 
-    name: 'Cohort 1', 
+  {
+    year: 2024,
+    name: 'Cohort 1',
     image: '/assets/images/cohort1.jpeg',
-    description: 'Our inaugural cohort that pioneered Bitcoin education.',
-    totalStudents: 7,
-    // successRate: '85%'
+    description: 'Our inaugural cohort that pioneered Bitcoin education in Uganda. We started with just 7 students and a dream to democratize financial knowledge.',
+    duration: '4 Weeks',
+    topics: ['Bitcoin Basics', 'Self Custody'],
+    students: 7
   },
-  { 
-    year: 2024, 
-    name: 'Cohort 2', 
+  {
+    year: 2024,
+    name: 'Cohort 2',
     image: '/assets/images/c2_2.jpeg',
-    description: 'Expanded curriculum with advanced Bitcoin Education',
-    totalStudents: 10,
-    // successRate: '92%'
+    description: 'Expanded our curriculum to include more advanced topics. This cohort saw increased participation and deeper community engagement.',
+    duration: '6 Weeks',
+    topics: ['Lightning Network', 'Economics'],
+    students: 10
   },
-  // { 
-  //   year: 2024, 
-  //   name: 'Cohort 3', 
-  //   image: '/assets/images/bitcoin3.jpeg',
-  //   description: 'Cutting-edge blockchain and Web3 development programs.',
-  //   totalStudents: 60,
-  //   successRate: '95%'
-  // }
+  {
+    year: 2024,
+    name: 'Cohort 3 & 4',
+    image: '/assets/images/cohort_4.jpeg', // Using another available image
+    description: 'Our most recent group, pushing the boundaries of what is possible with community-led Bitcoin education.',
+    duration: '8 Weeks',
+    topics: ['Development', 'Nostr'],
+    students: 15
+  },
+  {
+    year: 2024,
+    name: 'Cohort 5',
+    image: '/assets/images/cohort5.jpeg', // Using another available image
+    description: 'Our most recent group, pushing the boundaries of what is possible with community-led Bitcoin education.',
+    duration: '8 Weeks',
+    topics: ['Development', 'Nostr'],
+    students: 15
+  },
+  {
+    year: 2024,
+    name: 'Cohort 6',
+    image: '/assets/images/cohort1.jpeg',
+    description: 'Upcoming cohort planning and community expansion phases.',
+    duration: 'Coming Soon',
+    topics: ['Advanced Scripting', 'Mining'],
+    students: 0
+  }
 ];
 
 const PastCohorts: React.FC = () => {
-  const [currentCohort, setCurrentCohort] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto-advance every 7 seconds
+  // Auto-advance
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCohort((prev) => (prev + 1) % cohorts.length);
-    }, 7000);
+      setActiveIndex((prev) => (prev + 1) % cohorts.length);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
-  const nextCohort = () => setCurrentCohort((prev) => (prev + 1) % cohorts.length);
-  const prevCohort = () => setCurrentCohort((prev) => (prev - 1 + cohorts.length) % cohorts.length);
-
   return (
+    <section className="w-full py-16 md:py-20 bg-secondary/10">
+      <div className="container px-4">
 
-    <section className="w-full py-8 md:py-10 lg:py-10">
-        <div className="container ">
-          {/* Heading */}
-          <div className="text-center ">
-            <h2 className="text-4xl font-bold text-gray-900">Past Cohorts</h2>
-            <p className="text-gray-600 ">Explore our journey and impact</p>
-          </div>
+        <div className="container px-4">
 
-          {/* Carousel Wrapper */}
-          <div className="relative flex items-center justify-center mt-8 ">
-            <AnimatePresence mode="wait">
-              {cohorts.map((cohort, index) =>
-                index === currentCohort ? (
-                  <motion.div
-                    key={cohort.year}
-                    initial={{ opacity: 0, rotateY: -90, scale: 0.8 }}
-                    animate={{ opacity: 1, rotateY: 0, scale: 1 }}
-                    exit={{ opacity: 0, rotateY: 90, scale: 0.8 }}
-                    transition={{ duration: 0.7, ease: 'easeInOut' }}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={(event, info) => {
-                      if (info.offset.x > 50) prevCohort();
-                      if (info.offset.x < -50) nextCohort();
-                    }}
-                    className="w-full max-w-6xl z-10 "
-                    // className=" max-w-full  flex h-[400px] "
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Text Content */}
+            <div className="text-left space-y-6">
+              <h2 className="text-3xl font-heading font-bold tracking-tight text-primary sm:text-4xl">Past Cohorts</h2>
+              <div className="w-24 h-1 bg-primary rounded-full"></div>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Explore the journey of our students and the growing impact of School of Satoshi. From our inaugural class to our latest graduates, see how we are empowering the next generation of Bitcoin educators and builders.
+              </p>
+              <div className="pt-4">
+                <Link href="/cohorts" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                  View All Cohorts <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Custom Card Movie Carousel */}
+            <div className={styles.card_movie_wrapper}>
+              <div className={styles.card_movie_carousel}>
+                {cohorts.map((cohort, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.card_movie} ${index === activeIndex ? styles.active : ''}`}
+                    style={{ backgroundImage: `url(${cohort.image})` }}
                   >
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex h-[300px] w-full">
-                      <div className="w-1/2 relative">
-                        <Image src={cohort.image} alt={cohort.name} fill className="object-cover" />
-                      </div>
-                      <div className="w-1/2 p-6 flex flex-col justify-between">
-                        <div>
-                          <div className="flex justify-between items-center mb-3">
-                            <span className="text-xl font-bold text-gray-900">{cohort.name}</span>
-                            <span className="text-xs px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full">
-                              {cohort.year}
-                            </span>
-                          </div>
-                          <p className="text-gray-600 mb-3">{cohort.description}</p>
-                          <div className="grid grid-cols-2 gap-3 mb-3">
-                            <div>
-                              <p className="text-xs uppercase text-gray-500">Total Students</p>
-                              <p className="font-bold">{cohort.totalStudents}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs uppercase text-gray-500">Success Rate</p>
-                              {/* <p className="font-bold text-green-600">{cohort.successRate}</p> */}
-                            </div>
-                          </div>
-                        </div>
-                        {/* <Link href="#" className="flex items-center text-blue-600 hover:text-blue-800">
-                          View Cohort Details <ArrowUpRight className="ml-2" size={16} />
-                        </Link> */}
-                      </div>
+                    <div className={styles.card_movie_content}>
+                      <div className={styles.card_movie_title}>{cohort.name}</div>
+
+                      {/* <div className={styles.card_movie_description}>
+                        <p>{cohort.description}</p>
+                      </div> */}
+
+                      <Link href="/cohorts" className="inline-flex items-center text-white hover:text-primary transition-colors font-semibold uppercase tracking-wider text-sm mt-4">
+                        View Details <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
                     </div>
-                  </motion.div>
-                ) : null
-              )}
-            </AnimatePresence>
+
+                    {/* Optional: Student Count Badge acting as 'Rating' */}
+                    <div className={styles.card_rating} title="Total Students">
+                      {cohort.students}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Overlay */}
+              <div className={styles.card_movie_navigation}>
+                <ul className={styles.card_movie_navigation_list}>
+                  {cohorts.map((_, index) => (
+                    <li
+                      key={index}
+                      className={`${styles.nav_dot} ${index === activeIndex ? styles.active : ''}`}
+                      onClick={() => setActiveIndex(index)}
+                    />
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Navigation */}
-          {/* <div className="flex justify-center space-x-4 mt-8">
-            <Button onClick={prevCohort} className="bg-gray-100 hover:bg-gray-200 rounded-full p-2">
-              <ChevronLeft />
-            </Button>
-            <Button onClick={nextCohort} className="bg-gray-100 hover:bg-gray-200 rounded-full p-2">
-              <ChevronRight />
-            </Button>
-          </div> */}
-
-          {/* Progress Dots */}
-          <div className="flex justify-center mt-3 space-x-2">
-            {cohorts.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full ${
-                  index === currentCohort ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center mt-8">
-                  <Link href="/cohorts">
-                    <Button variant="outline">View All Cohorts</Button>
-                  </Link>
-                </div>
         </div>
+      </div>
     </section>
-
   );
 };
 
@@ -189,25 +178,25 @@ export default PastCohorts;
 // import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 
 // const cohorts = [
-//   { 
-//     year: 2022, 
-//     name: 'Cohort 1', 
+//   {
+//     year: 2022,
+//     name: 'Cohort 1',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Our inaugural cohort that pioneered blockchain education.',
 //     totalStudents: 30,
 //     successRate: '85%'
 //   },
-//   { 
-//     year: 2023, 
-//     name: 'Cohort 2', 
+//   {
+//     year: 2023,
+//     name: 'Cohort 2',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Expanded curriculum with advanced blockchain technologies.',
 //     totalStudents: 45,
 //     successRate: '92%'
 //   },
-//   { 
-//     year: 2024, 
-//     name: 'Cohort 3', 
+//   {
+//     year: 2024,
+//     name: 'Cohort 3',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Cutting-edge blockchain and Web3 development programs.',
 //     totalStudents: 60,
@@ -351,25 +340,25 @@ export default PastCohorts;
 // import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
 
 // const cohorts = [
-//   { 
-//     year: 2022, 
-//     name: 'Cohort 1', 
+//   {
+//     year: 2022,
+//     name: 'Cohort 1',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Our inaugural cohort that pioneered blockchain education.',
 //     totalStudents: 30,
 //     successRate: '85%'
 //   },
-//   { 
-//     year: 2023, 
-//     name: 'Cohort 2', 
+//   {
+//     year: 2023,
+//     name: 'Cohort 2',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Expanded curriculum with advanced blockchain technologies.',
 //     totalStudents: 45,
 //     successRate: '92%'
 //   },
-//   { 
-//     year: 2024, 
-//     name: 'Cohort 3', 
+//   {
+//     year: 2024,
+//     name: 'Cohort 3',
 //     image: '/assets/images/bitcoin3.jpeg',
 //     description: 'Cutting-edge blockchain and Web3 development programs.',
 //     totalStudents: 60,
@@ -399,10 +388,10 @@ export default PastCohorts;
 //             <motion.div
 //               key={cohort.year}
 //               initial={{ opacity: 0, scale: 0.8, x: index === currentCohort ? 0 : 100 }}
-//               animate={{ 
-//                 opacity: index === currentCohort ? 1 : 0, 
+//               animate={{
+//                 opacity: index === currentCohort ? 1 : 0,
 //                 scale: index === currentCohort ? 1 : 0.8,
-//                 x: index === currentCohort ? 0 : 100 
+//                 x: index === currentCohort ? 0 : 100
 //               }}
 //               transition={{ duration: 0.5 }}
 //               className={`absolute w-full max-w-4xl ${index !== currentCohort ? 'z-0' : 'z-10'}`}
@@ -447,13 +436,13 @@ export default PastCohorts;
 
 //         {/* Navigation */}
 //         <div className="flex justify-center space-x-4 mt-64">
-//           <button 
+//           <button
 //             onClick={prevCohort}
 //             className="bg-gray-100 hover:bg-gray-200 rounded-full p-2"
 //           >
 //             <ChevronLeft />
 //           </button>
-//           <button 
+//           <button
 //             onClick={nextCohort}
 //             className="bg-gray-100 hover:bg-gray-200 rounded-full p-2"
 //           >
@@ -464,10 +453,10 @@ export default PastCohorts;
 //         {/* Progress Dots */}
 //         <div className="flex justify-center mt-4 space-x-2">
 //           {cohorts.map((_, index) => (
-//             <div 
+//             <div
 //               key={index}
 //               className={`
-//                 w-2 h-2 rounded-full 
+//                 w-2 h-2 rounded-full
 //                 ${index === currentCohort ? 'bg-blue-600' : 'bg-gray-300'}
 //               `}
 //             />
@@ -515,18 +504,18 @@ export default PastCohorts;
 //           {cohorts.map((cohort) => (
 //             <div key={cohort.year} className="bg-white p-4 rounded-lg shadow-md">
 //               {/* <div className="h-64 w-72 mb-4">
-//                 <Image 
-//                   src={cohort.image} 
-//                   alt={cohort.name} 
+//                 <Image
+//                   src={cohort.image}
+//                   alt={cohort.name}
 //                   className="w-full h-full object-cover rounded-lg"
 //                   width = {100}
 //                   height={100}
 //                 />
 //               </div> */}
 //               <div className="relative h-64 w-72 mb-4">
-//               <Image 
-//                 src={cohort.image} 
-//                 alt={cohort.name} 
+//               <Image
+//                 src={cohort.image}
+//                 alt={cohort.name}
 //                 className="object-cover rounded-lg"
 //                 fill
 //               />

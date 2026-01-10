@@ -1,25 +1,21 @@
-
-
+"use client"
 
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Github, Linkedin, Twitter } from "lucide-react"
 import TeamLead from "@/components/teamLead"
-import edith from "../../public/assets/images/edith.jpeg";
-import brindon from "../../public/assets/images/brindon.jpg"
 
 export default function TeamPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background">
       {/* Leadership Team */}
-      <section className="w-full py-16 md:py-20">
+      <section className="w-full py-10 md:py-16">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">Core Leadership</h2>
-            <div className="w-20 h-1 bg-orange-500 my-2"></div>
-            <p className="max-w-[700px] text-gray-600 md:text-xl">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-tight text-foreground">Core Leadership</h2>
+            <div className="w-20 h-1 bg-primary my-2 rounded-full"></div>
+            <p className="max-w-[700px] text-muted-foreground md:text-xl">
               The visionaries guiding our mission to provide world-class Bitcoin education.
             </p>
           </div>
@@ -28,17 +24,17 @@ export default function TeamPage() {
       </section>
 
       {/* Instructors */}
-      <section className="w-full py-16 md:py-20 bg-gray-50">
+      <section className="w-full py-10 md:py-16 bg-secondary/20">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-black">Meet Our Tutors</h2>
-            <div className="w-20 h-1 bg-orange-500 my-2"></div>
-            <p className="max-w-[700px] text-gray-600 md:text-xl">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-tight text-foreground">Meet Our Tutors</h2>
+            <div className="w-20 h-1 bg-primary my-2 rounded-full"></div>
+            <p className="max-w-[700px] text-muted-foreground md:text-xl">
               Expert educators bringing real-world Bitcoin experience to the classroom.
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 name: "Angella Wafwoyo",
@@ -72,71 +68,69 @@ export default function TeamPage() {
               {
                 name: "Edith Mpumwiire",
                 role: "Growth Lead at BTC Dada & Accountant at Blink",
-                image: "./assets/images/edth.jpeg",
+                image: "/assets/images/edth.jpeg",
                 twitter: "https://x.com/mpumwiredith",
                 linkedin: "https://www.linkedin.com/in/edith-mpumwire-b9aa9080/",
               },
               {
                 name: "Sabina Gitau",
                 role: "Co-founder at Tando",
-                image: "./assets/images/sabina.jpeg",
+                image: "/assets/images/sabina.jpeg",
                 twitter: "https://x.com/waithiraah",
                 linkedin: "https://www.linkedin.com/in/sabina-gitau-6497b725a/",
               },
               {
                 name: "Akisibe Abdalaah",
                 role: "BTC Enthusiast",
-                image: "./assets/images/harymo.jpg",
+                image: "/assets/images/harymo.jpg",
                 twitter: "#",
                 linkedin: "#",
               },
-                            {
+              {
                 name: "Ritah Ssemakula",
                 role: "BTC Enthusiast",
-                image: "./assets/images/rytah.png",
+                image: "/assets/images/rytah.png",
                 twitter: "#",
                 linkedin: "#",
               },
               {
                 name: "Victor",
                 role: "Alumni",
-                image: "./assets/images/vic.png",
+                image: "/assets/images/vic.png",
                 twitter: "https://x.com/ntamugabumwevic",
                 linkedin: "https://www.linkedin.com/in/ntamugabumwevic/",
               },
             ].map((member, index) => (
-              <Card key={index} className="group overflow-hidden border-none shadow-lg transition-all duration-300 hover:shadow-xl">
+              <Card key={index} className="group overflow-hidden border-none shadow-md transition-all duration-300 hover:shadow-xl glass-card">
                 <div className="aspect-square relative overflow-hidden">
-                  <Image 
-                    src={member.image || "/placeholder.svg"} 
-                    alt={member.name} 
-                    fill 
-                    className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <div className="flex justify-center space-x-4 mb-2">
-                        <Link href={member.twitter} className="text-white hover:text-orange-500 transition-colors">
-                          <Twitter className="h-5 w-5" />
-                          <span className="sr-only">Twitter</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                    <div className="flex space-x-4">
+                      <Link href={member.twitter} className="text-white hover:text-primary transition-colors transform hover:scale-110">
+                        <Twitter className="h-5 w-5" />
+                        <span className="sr-only">Twitter</span>
+                      </Link>
+                      <Link href={member.linkedin} className="text-white hover:text-primary transition-colors transform hover:scale-110">
+                        <Linkedin className="h-5 w-5" />
+                        <span className="sr-only">LinkedIn</span>
+                      </Link>
+                      {member.github && (
+                        <Link href={member.github} className="text-white hover:text-primary transition-colors transform hover:scale-110">
+                          <Github className="h-5 w-5" />
+                          <span className="sr-only">GitHub</span>
                         </Link>
-                        <Link href={member.linkedin} className="text-white hover:text-orange-500 transition-colors">
-                          <Linkedin className="h-5 w-5" />
-                          <span className="sr-only">LinkedIn</span>
-                        </Link>
-                        {member.github && (
-                          <Link href={member.github} className="text-white hover:text-orange-500 transition-colors">
-                            <Github className="h-5 w-5" />
-                            <span className="sr-only">GitHub</span>
-                          </Link>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>
-                <div className="p-5 bg-white border-t-4 border-orange-500">
-                  <h3 className="font-bold text-xl text-black mb-1">{member.name}</h3>
-                  <p className="text-gray-600 text-sm">{member.role}</p>
+                <div className="p-5 text-center bg-card">
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
+                  <p className="text-muted-foreground text-sm font-medium">{member.role}</p>
                 </div>
               </Card>
             ))}
@@ -198,5 +192,3 @@ export default function TeamPage() {
     </div>
   )
 }
-
-

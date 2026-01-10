@@ -1,0 +1,219 @@
+.card_movie_wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 840px;
+    height: 440px;
+    /* Or responsive height */
+    margin: 0 auto;
+}
+
+.card_movie_carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    /* rounded-2xl equivalent */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    /* shadow-2xl equivalent */
+    transition: all 0.25s ease-in-out;
+}
+
+/* Hover effect on wrapper moves carousel */
+.card_movie_wrapper:hover .card_movie_carousel {
+    bottom: 60px;
+    /* $card-hover-offset-y */
+    right: 40px;
+    /* $card-hover-offset-x */
+}
+
+/* Navigation sidebar */
+.card_movie_navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* Changed from white to transparent as per modern designs, or keep white/glass */
+    pointer-events: none;
+    /* Let clicks pass through except for buttons */
+    z-index: 15;
+}
+
+.card_movie_navigation_list {
+    position: absolute;
+    right: 14px;
+    /* ($card-hover-offset-x - $item-size) / 2 approx */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.nav_dot:hover {
+    background-color: #bbb;
+}
+
+.nav_dot.active {
+    width: 18px;
+    height: 18px;
+    background-color: var(--primary);
+    /* Use our primary color */
+}
+
+/* Play Button / Action Button */
+.action_button {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    /* $card-hover-offset-x */
+    font-size: 14px;
+    color: #a0a0a0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    pointer-events: auto;
+    line-height: 60px;
+    /* $card-hover-offset-y */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.action_button:hover {
+    color: var(--primary);
+}
+
+.action_button::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid currentColor;
+    /* Triangle arrow */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+
+/* Each Card Item */
+.card_movie {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    /* Overlay for text readability */
+}
+
+.card_movie.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Gradient Overlay */
+.card_movie::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+    /* Matches "movie" dark theme style */
+}
+
+.card_movie_content {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    max-width: 450px;
+    color: white;
+    z-index: 2;
+}
+
+.card_movie_title {
+    font-size: 48px;
+    /* scaled down slightly from 60px for better fit */
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.card_movie_details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.detail_item {
+    color: #ccc;
+}
+
+.detail_list {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detail_list li:not(:last-child)::after {
+    content: '|';
+    margin-left: 0.5rem;
+    opacity: 0.5;
+}
+
+.card_movie_description {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.card_rating {
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+
+/* For Light theme cards if needed, but movie style usually dark/immersive */
