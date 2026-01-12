@@ -85,7 +85,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -127,7 +127,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -175,7 +175,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -217,7 +217,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -265,7 +265,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -307,7 +307,7 @@ export default function ProgramsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Link href="/apply" className="w-full">
+                      <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                         <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                           Apply Now
                         </Button>
@@ -355,7 +355,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>
@@ -397,7 +397,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>
@@ -444,7 +444,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>
@@ -486,7 +486,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>
@@ -533,7 +533,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>
@@ -575,7 +575,7 @@ export default function ProgramsPage() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Link href="/apply" className="w-full">
+                    <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" className="w-full" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full bg-primary hover:bg-orange-600 font-sans font-medium">
                         Apply Now
                       </Button>

@@ -53,7 +53,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:flex gap-3 items-center">
-          <Link href="/apply">
+          <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white transition-all">Apply Now</Button>
           </Link>
           <Link href="https://geyser.fund/project/schoolofsatoshiuganda">
@@ -95,7 +95,7 @@ export default function Header() {
                 ))}
               </nav>
               <div className="flex flex-col gap-4 mt-auto mb-8">
-                <Link href="/apply" onClick={closeMenu}>
+                <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" onClick={closeMenu} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full h-12 text-lg">
                     Apply Now
                   </Button>

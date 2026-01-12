@@ -193,7 +193,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
-                <Link href="/apply">
+                <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-white text-primary hover:bg-white/90 text-lg font-bold px-10 h-14 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all hover:-translate-y-1"
