@@ -57,7 +57,7 @@ export default function Header() {
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white transition-all">Apply Now</Button>
           </Link>
           <Link href="https://geyser.fund/project/schoolofsatoshiuganda">
-            <Button className="bg-primary hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20">Donate</Button>
+            <Button className="bg-primary hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20">Support our Mission</Button>
           </Link>
           <ThemeToggle />
         </div>
