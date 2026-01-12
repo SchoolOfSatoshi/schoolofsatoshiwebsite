@@ -101,9 +101,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Link
-            href="/register"
+            href="https://forms.gle/oVWK1JJdeEWstvTY8"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <button className="group relative px-6 py-3 rounded-full bg-primary text-white font-semibold text-base hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 flex items-center gap-2 overflow-hidden backdrop-blur-sm">
               <span className="relative z-10">Join the next cohort</span>
