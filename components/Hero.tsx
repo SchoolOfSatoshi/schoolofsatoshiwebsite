@@ -6,7 +6,9 @@ import Link from "next/link"
 
 const Hero = () => {
   return (
-    <section className="relative h-[calc(100vh-6rem)] mt-24 w-full flex items-center justify-center overflow-hidden">
+    <section
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
@@ -101,12 +103,12 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Link
-            href="https://forms.gle/oVWK1JJdeEWstvTY8"
+            href="https://forms.gle/oikzPPZVKSd5qcDX6"
             target="_blank"
             rel="noopener noreferrer"
           >
             <button className="group relative px-6 py-3 rounded-full bg-primary text-white font-semibold text-base hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 flex items-center gap-2 overflow-hidden backdrop-blur-sm">
-              <span className="relative z-10">Join the next cohort</span>
+              <span className="relative z-10">Join the waitlist</span>
               <MoveRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>

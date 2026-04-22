@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass h-20" : "bg-transparent h-24 border-transparent"
+      className={`w-full transition-all duration-300 ${scrolled ? "glass h-20" : "bg-transparent h-24 border-transparent"
         }`}
     >
       <div className="container h-full flex items-center justify-between">

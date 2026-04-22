@@ -38,6 +38,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import WaitlistBanner from "@/components/WaitlistBanner"
+import TopBarSpacer from "@/components/TopBarSpacer"
 
 export default function RootLayout({
   children,
@@ -48,7 +50,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
+          {/* Fixed top bar: banner stacked above header */}
+          <div id="top-bar" className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+            <WaitlistBanner />
+            <Header />
+          </div>
+          {/* Spacer that matches the top bar height so content isn't hidden behind it */}
+          <TopBarSpacer />
           {children}
           <Footer />
         </ThemeProvider>
