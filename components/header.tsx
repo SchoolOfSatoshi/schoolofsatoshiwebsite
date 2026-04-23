@@ -53,9 +53,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:flex gap-3 items-center">
-          <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white transition-all">Apply Now</Button>
-          </Link>
+          <Button variant="outline" disabled className="border-primary/40 text-primary/40 cursor-not-allowed opacity-50">Apply Now</Button>
           <Link href="https://geyser.fund/project/schoolofsatoshiuganda">
             <Button className="bg-primary hover:bg-orange-600 text-white shadow-lg shadow-orange-500/20">Support our Mission</Button>
           </Link>
@@ -96,7 +94,7 @@ export default function Header() {
               </nav>
               <div className="flex flex-col gap-4 mt-auto mb-8">
                 <Link href="https://forms.gle/oVWK1JJdeEWstvTY8" onClick={closeMenu} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full h-12 text-lg">
+                  <Button variant="outline" className="w-full h-12 text-lg" disabled>
                     Apply Now
                   </Button>
                 </Link>
